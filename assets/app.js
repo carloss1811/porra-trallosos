@@ -12,7 +12,35 @@ const STAGE_LABEL = {
 const KO_STAGES = ["LAST_32", "LAST_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"];
 
 let D = { standings: null, matches: null, predictions: null, history: [] };
-let crest = {};
+
+/* banderas: ISO 3166 para flagcdn.com (se ven igual en todos los dispositivos) */
+const FLAG_CODE = {
+  "México": "mx", "Sudáfrica": "za", "Corea del Sur": "kr", "Chequia": "cz",
+  "Canadá": "ca", "Bosnia y Herzegovina": "ba", "Catar": "qa", "Suiza": "ch",
+  "Brasil": "br", "Marruecos": "ma", "Haití": "ht", "Escocia": "gb-sct",
+  "Estados Unidos": "us", "Paraguay": "py", "Australia": "au", "Turquía": "tr",
+  "Alemania": "de", "Curazao": "cw", "Costa de Marfil": "ci", "Ecuador": "ec",
+  "Países Bajos": "nl", "Japón": "jp", "Suecia": "se", "Túnez": "tn",
+  "Bélgica": "be", "Egipto": "eg", "Irán": "ir", "Nueva Zelanda": "nz",
+  "España": "es", "Cabo Verde": "cv", "Arabia Saudí": "sa", "Uruguay": "uy",
+  "Francia": "fr", "Senegal": "sn", "Irak": "iq", "Noruega": "no",
+  "Argentina": "ar", "Argelia": "dz", "Austria": "at", "Jordania": "jo",
+  "Portugal": "pt", "RD Congo": "cd", "Uzbekistán": "uz", "Colombia": "co",
+  "Inglaterra": "gb-eng", "Croacia": "hr", "Ghana": "gh", "Panamá": "pa",
+};
+const TEAM_NAMES = Object.keys(FLAG_CODE).sort((a, b) => b.length - a.length);
+
+function flagImg(name) {
+  const code = FLAG_CODE[name];
+  return code ? `<img class="flag-img" src="https://flagcdn.com/32x24/${code}.png" alt="" loading="lazy">` : "";
+}
+
+/* añade su bandera a cada selección mencionada en un texto libre */
+function decorate(text) {
+  let t = esc(text);
+  for (const n of TEAM_NAMES) t = t.split(n).join(`${flagImg(n)}${n}`);
+  return t;
+}
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -41,10 +69,9 @@ function timeAgo(iso) {
   return `hace ${Math.round(min / 60)} h`;
 }
 
-function teamHTML(name, withCrest = true) {
+function teamHTML(name) {
   if (!name) return '<span class="muted">Por definir</span>';
-  const img = withCrest && crest[name] ? `<img src="${crest[name]}" alt="" loading="lazy">` : "";
-  return `${img}${esc(name)}`;
+  return `${flagImg(name)}${esc(name)}`;
 }
 
 /* ---------------- header ---------------- */
@@ -62,7 +89,7 @@ function renderHeader() {
     wrap.classList.add("chip-live");
     $("chip-next-label").textContent = "EN JUEGO";
     const m = live[0];
-    $("chip-next").textContent = `${m.home} ${m.gh ?? 0}-${m.ga ?? 0} ${m.away}`;
+    $("chip-next").innerHTML = `${teamHTML(m.home)} ${m.gh ?? 0}-${m.ga ?? 0} ${teamHTML(m.away)}`;
     $("live-badge").classList.remove("hidden");
   } else {
     wrap.classList.remove("chip-live");
@@ -70,7 +97,7 @@ function renderHeader() {
     const next = D.matches.matches
       .filter((m) => !m.finished && m.home && m.away)
       .sort((a, b) => a.utc.localeCompare(b.utc))[0];
-    $("chip-next").textContent = next ? `${next.home} – ${next.away} · ${fmtFecha(next.utc)}` : "—";
+    $("chip-next").innerHTML = next ? `${teamHTML(next.home)} – ${teamHTML(next.away)} · ${fmtFecha(next.utc)}` : "—";
     $("live-badge").classList.add("hidden");
   }
 }
@@ -97,9 +124,9 @@ function desgloseHTML(p) {
   return `<div class="desglose-grid">${p.desglose.map((i) => `
     <div class="q-item q-${i.estado}">
       <div class="q-titulo">${esc(i.titulo)}</div>
-      <div class="q-resp">${esc(i.respuesta) || "—"}</div>
+      <div class="q-resp">${decorate(i.respuesta) || "—"}</div>
       <div><span class="q-pts">${i.estado === "pendiente" ? `⏳ 0/${i.max}` : `${i.puntos}/${i.max}`}</span>
-      ${i.nota ? `<span class="q-nota"> · ${esc(i.nota)}</span>` : ""}</div>
+      ${i.nota ? `<span class="q-nota"> · ${decorate(i.nota)}</span>` : ""}</div>
     </div>`).join("")}</div>`;
 }
 
@@ -292,13 +319,13 @@ function renderPredicciones() {
     <tbody>${ps.map((p, i) => `
       <tr>
         <td class="pred-nombre" data-idx="${i}">${esc(p.nombre)}</td>
-        <td><span class="pred-pill">${esc(p.q1)}</span></td>
-        <td><span class="pred-pill">${esc(p.q2)}</span></td>
+        <td><span class="pred-pill">${decorate(p.q1)}</span></td>
+        <td><span class="pred-pill">${decorate(p.q2)}</span></td>
         <td>${esc(p.q5)}</td>
         <td><span class="pred-pill">${esc(p.q8)}</span></td>
-        <td>${esc(p.q6)}</td>
-        <td>${esc(p.q7)}</td>
-        <td class="small">${esc(p.q13)}</td>
+        <td>${decorate(p.q6)}</td>
+        <td>${decorate(p.q7)}</td>
+        <td class="small">${decorate(p.q13)}</td>
       </tr>`).join("")}</tbody>
   </table>`;
   document.querySelectorAll(".pred-nombre").forEach((td) => {
@@ -308,22 +335,22 @@ function renderPredicciones() {
 
 function showFicha(p) {
   const grupos = Object.keys(p.grupos || {}).sort().map((L) =>
-    `<tr><td>Grupo ${L}</td><td>${esc(p.grupos[L]["1"])}</td><td>${esc(p.grupos[L]["2"])}</td></tr>`).join("");
+    `<tr><td>Grupo ${L}</td><td>${decorate(p.grupos[L]["1"])}</td><td>${decorate(p.grupos[L]["2"])}</td></tr>`).join("");
   $("modal-body").innerHTML = `
     <h2>🔮 La porra de ${esc(p.nombre)}</h2>
     <table>
-      <tr><td>Campeón</td><td colspan="2"><b>${esc(p.q1)}</b></td></tr>
-      <tr><td>Subcampeón</td><td colspan="2">${esc(p.q2)}</td></tr>
-      <tr><td>Semifinalistas</td><td colspan="2">${esc((p.q3 || []).join(", "))}</td></tr>
-      <tr><td>Cuartofinalistas</td><td colspan="2" class="small">${esc((p.q4 || []).join(", "))}</td></tr>
+      <tr><td>Campeón</td><td colspan="2"><b>${decorate(p.q1)}</b></td></tr>
+      <tr><td>Subcampeón</td><td colspan="2">${decorate(p.q2)}</td></tr>
+      <tr><td>Semifinalistas</td><td colspan="2">${decorate((p.q3 || []).join(", "))}</td></tr>
+      <tr><td>Cuartofinalistas</td><td colspan="2" class="small">${decorate((p.q4 || []).join(", "))}</td></tr>
       <tr><td>Pichichi</td><td colspan="2">${esc(p.q5)}</td></tr>
-      <tr><td>Revelación / Decepción</td><td colspan="2">${esc(p.q6)} / ${esc(p.q7)}</td></tr>
+      <tr><td>Revelación / Decepción</td><td colspan="2">${decorate(p.q6)} / ${decorate(p.q7)}</td></tr>
       <tr><td>España llega a</td><td colspan="2">${esc(p.q8)} · ¿Gana su grupo? ${esc(p.q9)}</td></tr>
       <tr><td>Goleador de España / primero</td><td colspan="2">${esc(p.q10)} / ${esc(p.q12)}</td></tr>
       <tr><td>Goles de España</td><td colspan="2">${esc(p.q11)}</td></tr>
       <tr><th>Grupos</th><th>1º</th><th>2º</th></tr>
       ${grupos}
-      <tr><td>Final</td><td colspan="2"><b>${esc(p.q13)}</b> · gana ${esc(p.q14)}</td></tr>
+      <tr><td>Final</td><td colspan="2"><b>${decorate(p.q13)}</b> · gana ${decorate(p.q14)}</td></tr>
       <tr><td>¿Penaltis? / ¿Roja?</td><td colspan="2">${esc(p.q15)} / ${esc(p.q16)}</td></tr>
       <tr><td>Minuto primer gol final</td><td colspan="2">${esc(p.q17)}</td></tr>
     </table>`;
@@ -332,15 +359,7 @@ function showFicha(p) {
 
 /* ---------------- arranque ---------------- */
 
-function buildCrestMap() {
-  for (const m of D.matches.matches) {
-    if (m.home && m.home_crest) crest[m.home] = m.home_crest;
-    if (m.away && m.away_crest) crest[m.away] = m.away_crest;
-  }
-}
-
 function renderAll() {
-  buildCrestMap();
   renderHeader();
   renderPodio();
   renderRanking();

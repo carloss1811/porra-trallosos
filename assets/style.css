@@ -23,6 +23,11 @@ body {
 }
 
 a { color: var(--blue); }
+.flag-img {
+  width: 21px; height: 15.75px; object-fit: cover;
+  border-radius: 2.5px; vertical-align: -2.5px; margin-right: .38rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12);
+}
 .hidden { display: none !important; }
 .muted { color: var(--muted); }
 .small { font-size: .8rem; }
@@ -187,7 +192,7 @@ td.num, th.num { text-align: right; font-family: "JetBrains Mono", monospace; }
   margin-bottom: .9rem;
 }
 .match-line { display: flex; align-items: center; justify-content: center; gap: .9rem; font-size: 1.05rem; font-weight: 700; flex-wrap: wrap; }
-.match-line img { width: 26px; height: 26px; object-fit: contain; }
+.match-line img { width: 28px; height: 21px; }
 .match-score { font-family: "JetBrains Mono", monospace; font-size: 1.5rem; color: var(--gold); }
 .match-meta { text-align: center; color: var(--muted); font-size: .78rem; margin-top: .35rem; }
 .match-meta .en-juego { color: var(--red); font-weight: 700; }
@@ -209,7 +214,7 @@ td.num, th.num { text-align: right; font-family: "JetBrains Mono", monospace; }
 .grupo-card td, .grupo-card th { padding: .3rem .35rem; }
 .fila-pasa { background: rgba(46, 229, 157, .07); }
 .equipo-cell { display: flex; align-items: center; gap: .45rem; }
-.equipo-cell img { width: 18px; height: 18px; object-fit: contain; }
+.equipo-cell img { width: 18px; height: 13.5px; }
 
 .bracket { display: flex; gap: .9rem; overflow-x: auto; padding-bottom: .8rem; }
 .bracket-col { min-width: 215px; display: flex; flex-direction: column; gap: .55rem; }
@@ -217,7 +222,7 @@ td.num, th.num { text-align: right; font-family: "JetBrains Mono", monospace; }
 .bracket-match { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: .45rem .6rem; font-size: .8rem; }
 .bracket-match.live { border-color: rgba(255, 84, 112, .6); }
 .bracket-team { display: flex; justify-content: space-between; gap: .4rem; padding: .12rem 0; }
-.bracket-team img { width: 16px; height: 16px; object-fit: contain; vertical-align: -3px; margin-right: .3rem; }
+.bracket-team img { width: 16px; height: 12px; vertical-align: -2px; margin-right: .3rem; }
 .bracket-team.winner { color: var(--gold); font-weight: 700; }
 .bracket-score { font-family: "JetBrains Mono", monospace; }
 .bracket-fecha { color: var(--muted); font-size: .68rem; margin-top: .2rem; }
