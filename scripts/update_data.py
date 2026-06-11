@@ -28,6 +28,7 @@ import unicodedata
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -131,13 +132,22 @@ def load_responses():
     return [], True
 
 
-def parse_ts(s):
-    for fmt in ("%d/%m/%Y %H:%M:%S", "%d/%m/%Y %H:%M", "%m/%d/%Y %H:%M:%S"):
-        try:
-            return datetime.strptime(s.strip(), fmt).replace(tzinfo=timezone.utc)
-        except (ValueError, AttributeError):
-            continue
-    return None
+def parse_ts(s, mdy=False):
+    """Fecha de Google Sheets. mdy=True si la hoja está en locale inglés
+    (cabecera 'Timestamp'), que exporta mes/día/año."""
+    m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?", (s or "").strip())
+    if not m:
+        return None
+    a, b = int(m.group(1)), int(m.group(2))
+    month, day = (a, b) if mdy else (b, a)
+    if month > 12:  # el formato asumido no puede ser: los intercambiamos
+        month, day = day, month
+    try:
+        tz = ZoneInfo(CONFIG.get("sheet_timezone", "Europe/Madrid"))
+        return datetime(int(m.group(3)), month, day, int(m.group(4)),
+                        int(m.group(5)), int(m.group(6) or 0), tzinfo=tz)
+    except ValueError:
+        return None
 
 
 def parse_predictions(rows):
@@ -153,7 +163,7 @@ def parse_predictions(rows):
             h = header.strip()
             v = (value or "").strip()
             if norm(h).startswith(("marca temporal", "timestamp")):
-                ts = parse_ts(v)
+                ts = parse_ts(v, mdy=norm(h).startswith("timestamp"))
             elif norm(h) == "nombre":
                 p["nombre"] = v
             elif m := re.match(r"^Grupo ([A-L]) [—-] (1|2)º", h):
