@@ -2,7 +2,9 @@ name: Actualizar datos de la porra
 
 on:
   schedule:
-    # cada 10 minutos durante el Mundial (GitHub puede retrasarlos unos minutos)
+    # GitHub retrasa mucho los crons programados (a veces más de una hora).
+    # Para compensar, cada ejecución se queda en bucle ~75 min actualizando
+    # cada ~9 min; cuando arranca la siguiente, cancela a la anterior.
     - cron: "*/10 * * * *"
   workflow_dispatch:
 
@@ -11,11 +13,12 @@ permissions:
 
 concurrency:
   group: update-data
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 85
     steps:
       - uses: actions/checkout@v4
 
@@ -23,18 +26,24 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Actualizar datos
+      - name: Actualizar datos en bucle
         env:
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
           SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
-        run: python scripts/update_data.py
-
-      - name: Commit si hay cambios
         run: |
           git config user.name "porra-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/
-          git diff --cached --quiet && echo "Sin cambios" && exit 0
-          git commit -m "data: actualización automática"
-          git pull --rebase origin main
-          git push
+          for i in $(seq 1 9); do
+            echo "::group::Actualización $i/9"
+            git pull --rebase origin main
+            python scripts/update_data.py
+            git add data/
+            if git diff --cached --quiet; then
+              echo "Sin cambios"
+            else
+              git commit -m "data: actualización automática"
+              git push || { git pull --rebase origin main && git push; }
+            fi
+            echo "::endgroup::"
+            [ "$i" -lt 9 ] && sleep 540 || true
+          done
