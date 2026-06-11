@@ -27,7 +27,7 @@ import re
 import sys
 import unicodedata
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -315,6 +315,61 @@ def parse_minute(text):
 
 
 # ------------------------------------------------------- estado del torneo
+
+ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
+
+
+def espn_live_overlay(raw_matches):
+    """football-data (plan gratuito) tarda en marcar los partidos en juego;
+    el marcador público de ESPN va en tiempo real. Cruza ambos por hora de
+    inicio y nombre de equipo, y parchea estado, marcador y minuto de los
+    partidos que ESPN ya da como empezados o acabados. football-data sigue
+    siendo la fuente final: en cuanto se actualiza, manda su resultado."""
+    eventos = []
+    hoy = datetime.now(timezone.utc)
+    for delta in (-1, 0):
+        dia = (hoy + timedelta(days=delta)).strftime("%Y%m%d")
+        try:
+            d = json.loads(http_get(f"{ESPN_SCOREBOARD}?dates={dia}"))
+            eventos += d.get("events", [])
+        except Exception as e:  # noqa: BLE001 - ESPN es solo un refuerzo
+            print(f"Aviso: no pude leer ESPN ({e})")
+    parcheados = 0
+    for ev in eventos:
+        try:
+            comp = ev["competitions"][0]
+            state = ev["status"]["type"]["state"]  # pre / in / post
+            if state == "pre":
+                continue
+            kick = datetime.fromisoformat(ev["date"].replace("Z", "+00:00"))
+            lados = {c["homeAway"]: c for c in comp["competitors"]}
+            h_en = lados["home"]["team"]["displayName"]
+            a_en = lados["away"]["team"]["displayName"]
+            gh = int(lados["home"].get("score") or 0)
+            ga = int(lados["away"].get("score") or 0)
+            minuto = (ev["status"].get("displayClock") or "").rstrip("'")
+        except (KeyError, IndexError, ValueError):
+            continue
+        for m in raw_matches:
+            if m["status"] in FINISHED:
+                continue
+            mk = datetime.fromisoformat(m["utcDate"].replace("Z", "+00:00"))
+            if abs((mk - kick).total_seconds()) > 1800:
+                continue
+            if _sim(norm(m["homeTeam"].get("name") or ""), norm(h_en)) < 0.6 and \
+               _sim(norm(m["awayTeam"].get("name") or ""), norm(a_en)) < 0.6:
+                continue
+            m["status"] = "FINISHED" if state == "post" else "IN_PLAY"
+            m["minute"] = minuto or m.get("minute")
+            m["score"]["fullTime"]["home"] = gh
+            m["score"]["fullTime"]["away"] = ga
+            if state == "post" and gh != ga:
+                m["score"]["winner"] = "HOME_TEAM" if gh > ga else "AWAY_TEAM"
+            parcheados += 1
+            break
+    if parcheados:
+        print(f"ESPN: {parcheados} partido(s) actualizado(s) en directo")
+
 
 def simplify_match(m, live_mode=False):
     """Normaliza un partido de la API. En live_mode los partidos en juego
@@ -763,6 +818,7 @@ def prizes(scored, st):
 
 def main():
     raw = api_get("/competitions/WC/matches")["matches"]
+    espn_live_overlay(raw)
     try:
         scorers_raw = api_get("/competitions/WC/scorers?limit=50").get("scorers", [])
     except Exception as e:  # noqa: BLE001 - los goleadores no son críticos
