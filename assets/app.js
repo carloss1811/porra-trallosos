@@ -444,10 +444,6 @@ document.querySelectorAll(".tab").forEach((btn) => {
   });
 });
 
-// compartir por WhatsApp
-$("whatsapp-share").href = "https://wa.me/?text=" + encodeURIComponent(
-  "🏆 ¡La Porra Trallosa del Mundial 2026! Mira cómo va la clasificación: " + location.href);
-
 load();
 setInterval(load, 60000); // refresco cada minuto
 
