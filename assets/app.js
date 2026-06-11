@@ -313,6 +313,16 @@ function renderPredicciones() {
     $("predicciones-tabla").innerHTML = '<p class="muted">Aún no hay respuestas.</p>';
     return;
   }
+  if (D.predictions.ocultas) {
+    const cierre = new Date(D.predictions.deadline_utc).toLocaleString("es-ES",
+      { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
+    $("predicciones-tabla").innerHTML = `
+      <p>🤫 <b>Las porras están selladas.</b> Se revelan cuando se cierre el plazo
+      (${esc(cierre)}), para que nadie pueda copiar.</p>
+      <p class="muted small">Ya han enviado la suya:</p>
+      <ul>${ps.map((p) => `<li><b>${esc(p.nombre)}</b> ✅</li>`).join("")}</ul>`;
+    return;
+  }
   $("predicciones-tabla").innerHTML = `<table>
     <thead><tr><th>Tralloso</th><th>Campeón</th><th>Subcampeón</th><th>Pichichi</th>
       <th>España llega a</th><th>Revelación</th><th>Decepción</th><th>Final</th></tr></thead>

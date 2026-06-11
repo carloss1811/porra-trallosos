@@ -661,9 +661,18 @@ def main():
     predictions = parse_predictions(rows)
     print(f"{len(predictions)} participantes ({'EJEMPLO' if demo else 'reales'})")
 
+    # mientras el plazo siga abierto, las respuestas no se publican en la web
+    # para que nadie pueda copiar la porra de otro
+    deadline = datetime.fromisoformat(CONFIG["deadline_utc"].replace("Z", "+00:00"))
+    ocultas = datetime.now(timezone.utc) < deadline and not demo
+
     st = tournament_state(raw, scorers)
     scored = rank([score_person(p, st) for p in predictions])
     bote = prizes(scored, st)
+    if ocultas:
+        for s in scored:
+            for item in s["desglose"]:
+                item["respuesta"] = "🤫"
 
     # clasificación provisional con los partidos en juego como si acabaran así
     live_matches = [m for m in st["matches"] if m["live"]]
@@ -687,6 +696,8 @@ def main():
     hist_file = DATA / "history.json"
     history = json.loads(hist_file.read_text(encoding="utf-8")) if hist_file.exists() else []
     snapshot = {s["nombre"]: s["puntos"] for s in scored}
+    if history and set(history[-1]["puntos"]) != set(snapshot):
+        history = []  # cambió el plantel (p. ej. de demo a real): gráfica desde cero
     if not history or history[-1]["puntos"] != snapshot:
         history.append({"ts": now, "puntos": snapshot})
 
@@ -700,6 +711,8 @@ def main():
         "campeon": st["campeon"],
         "participantes": scored,
         "live": live_block,
+        "predicciones_ocultas": ocultas,
+        "deadline_utc": CONFIG["deadline_utc"],
     }
 
     matches_out = {
@@ -715,9 +728,13 @@ def main():
         "scorers": scorers[:15],
     }
 
+    pred_out = {"updated": now, "demo": demo, "ocultas": ocultas,
+                "deadline_utc": CONFIG["deadline_utc"],
+                "participantes": ([{"nombre": p["nombre"]} for p in predictions]
+                                  if ocultas else predictions)}
+
     for name, obj in (("standings.json", standings), ("matches.json", matches_out),
-                      ("predictions.json", {"updated": now, "demo": demo,
-                                            "participantes": predictions}),
+                      ("predictions.json", pred_out),
                       ("history.json", history)):
         (DATA / name).write_text(json.dumps(obj, ensure_ascii=False, indent=1),
                                  encoding="utf-8")
