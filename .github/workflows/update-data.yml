@@ -33,8 +33,8 @@ jobs:
         run: |
           git config user.name "porra-bot"
           git config user.email "actions@users.noreply.github.com"
-          for i in $(seq 1 9); do
-            echo "::group::Actualización $i/9"
+          for i in $(seq 1 15); do
+            echo "::group::Actualización $i/15"
             git pull --rebase origin main
             python scripts/update_data.py
             git add data/
@@ -45,5 +45,5 @@ jobs:
               git push || { git pull --rebase origin main && git push; }
             fi
             echo "::endgroup::"
-            [ "$i" -lt 9 ] && sleep 540 || true
+            [ "$i" -lt 15 ] && sleep 300 || true
           done
