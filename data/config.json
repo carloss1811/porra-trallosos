@@ -1,0 +1,10 @@
+{
+  "comment": "Configuración de la Porra Trallosa. Edita este archivo y haz commit para cambiar valores.",
+  "aportacion_eur": 10,
+  "comment_aportacion": "Lo que pone cada tralloso. El bote se calcula solo: nº de participantes × aportación. Cámbialo cuando lo decidáis.",
+  "sheet_csv_url": "",
+  "comment_sheet": "URL de la hoja de respuestas de Google (vale la URL normal del navegador). La hoja debe estar compartida como 'Cualquier persona con el enlace: Lector'. Mientras esté vacío se usan los datos de ejemplo de data/respuestas_ejemplo.csv.",
+  "enforce_deadline": true,
+  "deadline_utc": "2026-06-11T19:00:00Z",
+  "reparto": { "primero": 0.60, "segundo": 0.25, "tercero": 0.10, "especial": 0.05 }
+}

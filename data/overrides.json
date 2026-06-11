@@ -1,0 +1,14 @@
+{
+  "comment": "Datos que la API gratuita no da y se rellenan a mano editando este archivo (Claude o Carlos). Déjalos en null hasta que se sepan.",
+  "primer_goleador_espana": null,
+  "comment_1": "Nombre del jugador que marque el primer gol de España, p. ej. 'Lamine Yamal'.",
+  "maximo_goleador_espana": null,
+  "comment_2": "Máximo goleador de España al final del Mundial. Si hay empate, lista separada por comas: 'Lamine Yamal, Mikel Oyarzabal'.",
+  "tarjeta_roja_final": null,
+  "comment_3": "true si hay tarjeta roja en la final, false si no. Se rellena tras la final.",
+  "minuto_primer_gol_final": null,
+  "comment_4": "Minuto del primer gol de la final (número entero, minuto de juego). Si la final acaba 0-0 déjalo en null y pon final_sin_goles en true.",
+  "final_sin_goles": false,
+  "maximo_goleador_mundial": null,
+  "comment_5": "Normalmente lo da la API (pichichi). Rellenar solo si la API falla o hay discrepancia. Admite lista separada por comas si hay empate."
+}
