@@ -139,6 +139,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1rem; }
   border-radius: var(--radius);
   padding: 1.1rem;
   margin-bottom: 1.1rem;
+  overflow-x: auto;
 }
 
 /* ---------- podio ---------- */
@@ -263,9 +264,16 @@ td.num, th.num { text-align: right; font-family: "JetBrains Mono", monospace; }
 .modal-close { position: absolute; top: .7rem; right: .9rem; background: none; border: none; color: var(--muted); font-size: 1.1rem; cursor: pointer; }
 
 /* ---------- reglas ---------- */
-.reglas ul, .reglas ol { margin: .4rem 0 .9rem 1.3rem; line-height: 1.55; }
+.reglas ol { margin: .4rem 0 .9rem 1.3rem; line-height: 1.55; }
+.reglas ul { list-style: none; margin: .4rem 0 .9rem .2rem; line-height: 1.7; }
 .reglas p { margin: .35rem 0; line-height: 1.5; }
-.tabla-puntos td:last-child { text-align: right; font-family: "JetBrains Mono", monospace; color: var(--gold); white-space: nowrap; }
+.tabla-puntos { font-size: .85rem; }
+.tabla-puntos td { padding: .4rem .3rem; }
+.tabla-puntos td:first-child { padding-right: 1rem; }
+.tabla-puntos td:last-child {
+  text-align: right; font-family: "JetBrains Mono", monospace;
+  color: var(--gold); white-space: nowrap; width: 1%; font-weight: 700;
+}
 
 footer { text-align: center; color: var(--muted); padding: 2rem 1rem 2.5rem; font-size: .85rem; }
 
