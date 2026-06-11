@@ -173,12 +173,11 @@ function renderPodio() {
   const top = D.standings.participantes.slice(0, 3);
   $("podio").innerHTML = top.map((p, i) => `
     <div class="podio-card p${i + 1}">
-      <div class="podio-medal">${medalla(p.rank)}</div>
+      <span class="podio-num">${p.rank}</span>
       <div class="podio-avatar">${avatarHTML(p.nombre, "avatar-lg")}</div>
       <div class="podio-nombre">${esc(p.nombre)}</div>
-      <div class="podio-puntos">${p.puntos} pts</div>
+      <div class="podio-puntos">${p.puntos}<small>pts · máx ${p.max_posible}</small></div>
       <div class="podio-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : ""}${p.premio_especial ? " 🎯" : ""}</div>
-      <div class="small muted">máx. posible: ${p.max_posible}</div>
     </div>`).join("");
 }
 
@@ -193,26 +192,28 @@ function desgloseHTML(p) {
 }
 
 function renderRanking() {
+  const lider = Math.max(1, ...D.standings.participantes.map((p) => p.puntos));
   const rows = D.standings.participantes.map((p, idx) => `
-    <tr class="ranking-row" data-idx="${idx}">
-      <td class="rank-pos">${medalla(p.rank)}</td>
-      <td>${avatarHTML(p.nombre)}<b>${esc(p.nombre)}</b>${p.premio_especial ? " 🎯" : ""}</td>
-      <td class="num rank-puntos">${p.puntos}</td>
-      <td class="num muted">${p.max_posible}</td>
-      <td class="num rank-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : "—"}</td>
-    </tr>
-    <tr class="desglose hidden" id="desglose-${idx}"><td colspan="5">${desgloseHTML(p)}</td></tr>`).join("");
+    <div class="rk-row" data-idx="${idx}">
+      <span class="rk-pos">${p.rank}</span>
+      ${avatarHTML(p.nombre)}
+      <span class="rk-main">
+        <span class="rk-nombre">${esc(p.nombre)}${p.premio_especial ? " 🎯" : ""}</span>
+        <span class="rk-bar"><i style="width:${Math.max(2, (p.puntos / lider) * 100)}%"></i></span>
+      </span>
+      <span class="rk-max">máx ${p.max_posible}</span>
+      <span class="rk-pts">${p.puntos}</span>
+      <span class="rk-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : ""}</span>
+    </div>
+    <div class="desglose hidden" id="desglose-${idx}">${desgloseHTML(p)}</div>`).join("");
 
   $("ranking").innerHTML = `
-    <h2>🏅 Clasificación general</h2>
-    <p class="muted small">Toca una fila para ver el desglose pregunta a pregunta. "Máx" es lo que aún puede llegar a sumar cada uno.</p>
-    <div class="table-scroll"><table>
-      <thead><tr><th></th><th>Tralloso</th><th class="num">Puntos</th><th class="num">Máx</th><th class="num">Premio</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table></div>`;
+    <h2>Clasificación general</h2>
+    <p class="muted small">Toca a un tralloso para ver su desglose pregunta a pregunta. "Máx" es lo que aún puede llegar a sumar.</p>
+    <div class="rk">${rows}</div>`;
 
-  document.querySelectorAll(".ranking-row").forEach((tr) => {
-    tr.addEventListener("click", () => $(`desglose-${tr.dataset.idx}`).classList.toggle("hidden"));
+  document.querySelectorAll(".rk-row").forEach((el) => {
+    el.addEventListener("click", () => $(`desglose-${el.dataset.idx}`).classList.toggle("hidden"));
   });
 }
 
@@ -239,7 +240,7 @@ function renderChart() {
   const x = (i) => pad.l + (i / (hist.length - 1)) * (W - pad.l - pad.r);
   const y = (v) => H - pad.b - (v / maxPts) * (H - pad.t - pad.b);
 
-  ctx.strokeStyle = "#28345e"; ctx.fillStyle = "#8c97b8"; ctx.font = "10px Sora";
+  ctx.strokeStyle = "rgba(255,255,255,.08)"; ctx.fillStyle = "#7e88a6"; ctx.font = "10px JetBrains Mono, monospace";
   for (let g = 0; g <= 4; g++) {
     const v = Math.round((maxPts / 4) * g);
     ctx.beginPath(); ctx.moveTo(pad.l, y(v)); ctx.lineTo(W - pad.r, y(v)); ctx.stroke();
@@ -280,13 +281,13 @@ function renderVivo() {
           ${m.minute ? ` · min ${esc(m.minute)}` : ""} · ${STAGE_LABEL[m.stage] || m.stage}${m.group ? ` · Grupo ${m.group}` : ""}</div>
       </div>`).join("");
   } else {
-    lm.innerHTML = `<div class="card"><h2>🔴 En vivo</h2><p class="muted">Ahora mismo no hay ningún partido en juego. Cuando lo haya, aquí verás el marcador y cómo afectaría al ranking si acabara así.</p></div>`;
+    lm.innerHTML = `<div class="bloque"><h2>En vivo</h2><p class="muted">Ahora mismo no hay ningún partido en juego. Cuando lo haya, aquí verás el marcador y cómo afectaría al ranking si acabara así.</p></div>`;
   }
 
   const lb = D.standings.live;
   if (lb && live.length) {
-    ls.innerHTML = `<div class="card">
-      <h2>⚡ Ranking provisional (si los partidos acaban así)</h2>
+    ls.innerHTML = `<div class="bloque">
+      <h2>Ranking provisional (si los partidos acaban así)</h2>
       <div class="table-scroll"><table>
         <thead><tr><th></th><th>Tralloso</th><th class="num">Puntos</th><th class="num">Δ pts</th><th class="num">Δ pos</th></tr></thead>
         <tbody>${lb.participantes.map((p) => `
@@ -307,8 +308,8 @@ function renderVivo() {
     .filter((m) => !m.finished && !m.live && (m.home === "España" || m.away === "España"))
     .sort((a, b) => a.utc.localeCompare(b.utc))[0];
   const espanaCard = espana ? `
-    <div class="card espana-card">
-      <h2>🇪🇸 Próximo partido de España</h2>
+    <div class="espana-card">
+      <h2>${flagImg("España")}Próximo partido de España</h2>
       <div class="match-line">
         <span>${teamHTML(espana.home)}</span>
         <span class="match-score espana-vs" data-utc="${espana.utc}">VS</span>
@@ -322,7 +323,7 @@ function renderVivo() {
     .filter((m) => !m.finished && !m.live)
     .sort((a, b) => a.utc.localeCompare(b.utc))
     .slice(0, 8);
-  px.innerHTML = `${espanaCard}<div class="card"><h2>📅 Próximos partidos</h2>
+  px.innerHTML = `${espanaCard}<div class="bloque"><h2>Próximos partidos</h2>
     ${proximos.map((m) => `
       <div class="proximo-item">
         <span>${teamHTML(m.home)} – ${teamHTML(m.away)}</span>
@@ -384,13 +385,66 @@ function renderGoleadores() {
 
 /* ---------------- predicciones ---------------- */
 
+/* agrupa respuestas de texto libre ignorando mayúsculas y tildes */
+function agrupaVotos(ps, key) {
+  const m = new Map();
+  ps.forEach((p) => {
+    const raw = String(p[key] || "").trim();
+    if (!raw) return;
+    const k = raw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    if (!m.has(k)) m.set(k, { label: raw, n: 0 });
+    m.get(k).n += 1;
+  });
+  return [...m.values()].sort((a, b) => b.n - a.n);
+}
+
+function renderConsenso(ps) {
+  const campeones = agrupaVotos(ps, "q1");
+  if (!campeones.length) { $("consenso").innerHTML = ""; return; }
+  const total = ps.length;
+  const barras = campeones.map((c) => `
+    <div class="cons-fila">
+      <span class="cons-equipo">${decorate(c.label)}</span>
+      <span class="cons-barra"><i style="width:${(c.n / total) * 100}%"></i></span>
+      <span class="cons-n">${c.n}</span>
+    </div>`).join("");
+
+  const dato = (label, key) => {
+    const top = agrupaVotos(ps, key)[0];
+    return top ? `<div class="cons-dato"><span class="cons-label">${label}</span>${decorate(top.label)} <span class="cons-n">×${top.n}</span></div>` : "";
+  };
+  const solitarios = ps.filter((p) => {
+    const k = String(p.q1 || "").trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    return campeones.find((c) => c.label.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === k)?.n === 1;
+  });
+
+  $("consenso").innerHTML = `
+    <section class="bloque consenso">
+      <h2>El consenso tralloso</h2>
+      <div class="cons-grid">
+        <div>
+          <p class="muted small" style="margin-bottom:.5rem">¿Quién gana el Mundial según la porra?</p>
+          ${barras}
+        </div>
+        <div>
+          ${dato("Pichichi más votado", "q5")}
+          ${dato("Revelación favorita", "q6")}
+          ${dato("Decepción más temida", "q7")}
+          ${solitarios.length ? `<div class="cons-dato"><span class="cons-label">A contracorriente (campeón que nadie más votó)</span>${solitarios.map((p) => esc(p.nombre)).join(", ")}</div>` : ""}
+        </div>
+      </div>
+    </section>`;
+}
+
 function renderPredicciones() {
   const ps = D.predictions.participantes;
   if (!ps.length) {
     $("predicciones-tabla").innerHTML = '<p class="muted">Aún no hay respuestas.</p>';
+    $("consenso").innerHTML = "";
     return;
   }
   if (D.predictions.ocultas) {
+    $("consenso").innerHTML = "";
     const cierre = new Date(D.predictions.deadline_utc).toLocaleString("es-ES",
       { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
     $("predicciones-tabla").innerHTML = `
@@ -400,6 +454,7 @@ function renderPredicciones() {
       <ul>${ps.map((p) => `<li>${avatarHTML(p.nombre)}<b>${esc(p.nombre)}</b> ✅</li>`).join("")}</ul>`;
     return;
   }
+  renderConsenso(ps);
   $("predicciones-tabla").innerHTML = `<table>
     <thead><tr><th>Tralloso</th><th>Campeón</th><th>Subcampeón</th><th>Pichichi</th>
       <th>España llega a</th><th>Revelación</th><th>Decepción</th><th>Final</th></tr></thead>

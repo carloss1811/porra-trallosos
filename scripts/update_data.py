@@ -189,7 +189,69 @@ def parse_predictions(rows):
         p["q3"] = [x.strip() for x in p.get("q3", "").split(",") if x.strip()]
         p["q4"] = [x.strip() for x in p.get("q4", "").split(",") if x.strip()]
         people[norm(p["nombre"])] = p  # la última respuesta en plazo manda
-    return list(people.values())
+    out = list(people.values())
+    for p in out:
+        estandariza_equipos(p)
+    estandariza_jugadores(out)
+    return out
+
+
+PARTICULAS = {"de", "la", "el", "del", "van", "der", "di", "da", "dos"}
+
+
+def titulo_jugador(s):
+    """'lamine yamal' -> 'Lamine Yamal'; respeta partículas ('de', 'van'...)."""
+    palabras = []
+    for i, w in enumerate(re.split(r"\s+", (s or "").strip())):
+        lw = w.lower()
+        palabras.append(lw if (i > 0 and lw in PARTICULAS) else w[:1].upper() + w[1:].lower())
+    return " ".join(palabras)
+
+
+def estandariza_equipos(p):
+    """Pasa todos los equipos de una porra a su nombre oficial (así llevan
+    bandera en la web y el escrutinio compara siempre el mismo texto), y
+    reescribe el resultado de la final como 'Equipo A g1 - g2 Equipo B'."""
+    for c in ("q1", "q2", "q6", "q7", "q14"):
+        if p.get(c):
+            p[c] = canonical_team(p[c])
+    p["q3"] = [canonical_team(x) for x in p["q3"]]
+    p["q4"] = [canonical_team(x) for x in p["q4"]]
+    for g in p["grupos"].values():
+        for pos in g:
+            g[pos] = canonical_team(g[pos])
+    score = parse_final_score(p.get("q13", ""))
+    if score:
+        (e1, g1), (e2, g2) = score.items()
+        p["q13"] = f"{e1} {g1} - {g2} {e2}"
+
+
+def estandariza_jugadores(people):
+    """Unifica los nombres de jugador entre participantes: si uno puso
+    'Oyarzabal' y otro 'Mikel Oyarzabal' (o 'Oyarzaval'), todos muestran la
+    variante más completa, con mayúsculas normalizadas."""
+    campos = ("q5", "q10", "q12")
+    grupos = []  # listas de variantes que nombran al mismo jugador
+    for p in people:
+        for c in campos:
+            v = p.get(c, "")
+            if not v:
+                continue
+            for g in grupos:
+                if any(same_player(v, w) for w in g):
+                    g.append(v)
+                    break
+            else:
+                grupos.append([v])
+    canon = {}
+    for g in grupos:
+        mejor = titulo_jugador(max(g, key=len))
+        for v in g:
+            canon[v] = mejor
+    for p in people:
+        for c in campos:
+            if p.get(c):
+                p[c] = canon.get(p[c], p[c])
 
 
 TODOS_LOS_EQUIPOS = [t for ts in GRUPOS.values() for t in ts]
@@ -229,13 +291,17 @@ def canonical_team(s):
 
 
 def parse_final_score(text):
-    """'España 2-1 Francia' -> ({'España': 2, 'Francia': 1}) o None.
+    """'España 2-1 Francia' o 'España 2 Francia 1' -> {'España': 2, 'Francia': 1}.
     Admite erratas y alias en los nombres ('Holanda', 'Mejico'...)."""
-    m = re.match(r"^\s*(.+?)\s+(\d+)\s*[-–]\s*(\d+)\s+(.+?)\s*$", text or "")
-    if not m:
+    t = (text or "").strip()
+    if m := re.match(r"^(.+?)\s+(\d+)\s*[-–]\s*(\d+)\s+(.+?)$", t):
+        a, ga, gb, b = m.group(1), int(m.group(2)), int(m.group(3)), m.group(4)
+    elif m := re.match(r"^(\D+?)\s*(\d+)\s*[-–,;]?\s*(\D+?)\s*(\d+)$", t):
+        a, ga, b, gb = m.group(1), int(m.group(2)), m.group(3), int(m.group(4))
+    else:
         return None
-    return {canonical_team(m.group(1)): int(m.group(2)),
-            canonical_team(m.group(4)): int(m.group(3))}
+    res = {canonical_team(a): ga, canonical_team(b): gb}
+    return res if len(res) == 2 else None
 
 
 def parse_minute(text):

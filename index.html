@@ -3,12 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🏆 Porra Trallosa — Mundial 2026</title>
+<title>Porra Trallosa — Mundial 2026</title>
 <meta name="description" content="La porra del Mundial 2026 de los trallosos: clasificación en vivo, resultados y predicciones.">
-<meta name="theme-color" content="#0a0e1a">
+<meta property="og:title" content="🏆 Porra Trallosa — Mundial 2026">
+<meta property="og:description" content="Clasificación en vivo, resultados y las porras de todos los trallosos. ¿Quién se lleva el bote?">
+<meta property="og:url" content="https://carloss1811.github.io/porra-trallosos/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#06080f">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -20,39 +24,36 @@
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="hero-title">
-      <span class="trophy">🏆</span>
-      <div>
-        <h1>PORRA TRALLOSA</h1>
-        <p class="subtitle">Mundial 2026 · México · Estados Unidos · Canadá</p>
-      </div>
-    </div>
+    <p class="hero-kicker">Mundial 2026 · México · Estados Unidos · Canadá</p>
+    <h1>Porra<br>Trallosa</h1>
     <div class="hero-chips">
-      <div class="chip chip-gold"><span class="chip-label">BOTE</span><span id="chip-bote">—</span></div>
-      <div class="chip"><span class="chip-label">TRALLOSOS</span><span id="chip-participantes">—</span></div>
-      <div class="chip" id="chip-live-wrap"><span class="chip-label" id="chip-next-label">PRÓXIMO</span><span id="chip-next">—</span></div>
-      <div class="chip chip-muted"><span class="chip-label">ACTUALIZADO</span><span id="chip-updated">—</span></div>
+      <div class="chip chip-gold"><span class="chip-label">Bote</span><span id="chip-bote">—</span></div>
+      <div class="chip"><span class="chip-label">Trallosos</span><span id="chip-participantes">—</span></div>
+      <div class="chip" id="chip-live-wrap"><span class="chip-label" id="chip-next-label">Próximo</span><span id="chip-next">—</span></div>
+      <div class="chip chip-muted"><span class="chip-label">Actualizado</span><span id="chip-updated">—</span></div>
     </div>
   </div>
 </header>
 
 <nav class="tabs" id="tabs">
-  <button class="tab active" data-tab="clasificacion">🏅 Clasificación</button>
-  <button class="tab" data-tab="vivo">🔴 En vivo <span id="live-badge" class="live-badge hidden"></span></button>
-  <button class="tab" data-tab="partidos">⚽ Partidos</button>
-  <button class="tab" data-tab="predicciones">🔮 Predicciones</button>
-  <button class="tab" data-tab="reglas">📜 Reglas</button>
+  <div class="tabs-inner">
+    <button class="tab active" data-tab="clasificacion">Clasificación</button>
+    <button class="tab" data-tab="vivo">En vivo <span id="live-badge" class="live-badge hidden"></span></button>
+    <button class="tab" data-tab="partidos">Partidos</button>
+    <button class="tab" data-tab="predicciones">Predicciones</button>
+    <button class="tab" data-tab="reglas">Reglas</button>
+  </div>
 </nav>
 
 <main>
   <section id="tab-clasificacion" class="tab-panel active">
     <div id="podio" class="podio"></div>
-    <div id="ranking" class="card"></div>
-    <div class="card">
-      <h2>📈 Evolución de la porra</h2>
+    <div id="ranking"></div>
+    <section class="bloque">
+      <h2>Evolución de la porra</h2>
       <canvas id="chart" height="260"></canvas>
       <p class="muted small" id="chart-empty"></p>
-    </div>
+    </section>
   </section>
 
   <section id="tab-vivo" class="tab-panel">
@@ -66,21 +67,22 @@
     <div id="grupos" class="grupos-grid"></div>
     <h2>Eliminatorias</h2>
     <div id="bracket" class="bracket"></div>
-    <h2>🥇 Máximos goleadores</h2>
-    <div id="goleadores" class="card"></div>
+    <h2>Máximos goleadores</h2>
+    <div id="goleadores" class="bloque"></div>
   </section>
 
   <section id="tab-predicciones" class="tab-panel">
-    <div class="card">
-      <h2>🔮 Lo que ha votado cada tralloso</h2>
+    <div id="consenso"></div>
+    <section class="bloque">
+      <h2>Lo que ha votado cada tralloso</h2>
       <p class="muted small">Toca un nombre para ver su porra completa.</p>
       <div id="predicciones-tabla" class="table-scroll"></div>
-    </div>
+    </section>
   </section>
 
   <section id="tab-reglas" class="tab-panel">
-    <div class="card reglas">
-      <h2>💰 Reparto del bote</h2>
+    <div class="reglas">
+      <h2>Reparto del bote</h2>
       <ul>
         <li>🥇 1º clasificado: <b>60%</b> del bote</li>
         <li>🥈 2º clasificado: <b>25%</b> del bote</li>
@@ -88,7 +90,7 @@
         <li>🎯 Premio especial: <b>5%</b> — quien más se acerque al minuto del primer gol de la final</li>
       </ul>
 
-      <h2>🧮 Puntuación</h2>
+      <h2>Puntuación</h2>
       <table class="tabla-puntos">
         <tr><td>Campeón del Mundial</td><td>25</td></tr>
         <tr><td>Subcampeón</td><td>18</td></tr>
@@ -108,7 +110,7 @@
       </table>
       <p class="small muted">Máximo teórico: <b>281 puntos</b>.</p>
 
-      <h2>📜 Normas básicas</h2>
+      <h2>Normas básicas</h2>
       <ol>
         <li>La porra se rellena completa antes del primer partido del Mundial. Después no se cambia nada.</li>
         <li>Si tu jugador se lesiona, no va convocado o cae eliminado pronto, te aguantas: no se cambia.</li>
@@ -117,12 +119,12 @@
         <li>El resultado exacto de la final es el marcador final incluyendo prórroga, sin contar la tanda de penaltis. Si hay penaltis, el ganador es quien gane la tanda.</li>
       </ol>
 
-      <h2>✨ Revelación y decepción</h2>
+      <h2>Revelación y decepción</h2>
       <p><b>Favoritas</b> (solo estas 10): Francia, España, Argentina, Inglaterra, Portugal, Brasil, Países Bajos, Marruecos, Bélgica y Alemania.</p>
       <p><b>Revelación</b>: la selección NO favorita que más lejos llegue. Si varias llegan a la misma ronda, todas valen.</p>
       <p><b>Decepción</b>: la favorita que antes caiga. Si varias caen en la misma ronda, todas valen.</p>
 
-      <h2>⚖️ Desempates</h2>
+      <h2>Desempates</h2>
       <ol>
         <li>Quien haya acertado el campeón.</li>
         <li>Quien haya acertado el subcampeón.</li>
@@ -133,7 +135,7 @@
         <li>Si sigue el empate, se reparte el premio.</li>
       </ol>
 
-      <h2>🎯 Premio especial</h2>
+      <h2>Premio especial</h2>
       <p>Para quien más se acerque al minuto del primer gol de la final. Si la final acaba 0-0, gana quien puso "no hay gol"; si nadie lo puso, gana el minuto más alto.</p>
     </div>
   </section>
