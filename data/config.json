@@ -11,7 +11,7 @@
   "comment_deadline": "Cierre del plazo para responder: 12 de junio a las 21:00 (hora española). Hasta entonces las predicciones se ocultan en la web para que nadie copie.",
   "usar_datos_de_ejemplo": false,
   "comment_ejemplo": "Mientras sea true, la web muestra los datos de prueba. En false, la web usa las respuestas reales de la hoja.",
-  "form_url": "",
+  "form_url": "https://forms.gle/EXAMPLE_FORM_ID",
   "comment_form": "URL del formulario de Google (la de compartir). Si se rellena, la web muestra un botón 'Rellenar mi porra' mientras el plazo esté abierto.",
   "reparto": { "primero": 0.60, "segundo": 0.25, "tercero": 0.10, "especial": 0.05 }
 }
