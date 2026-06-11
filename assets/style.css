@@ -142,6 +142,19 @@ main { max-width: 1100px; margin: 0 auto; padding: 1rem; }
   overflow-x: auto;
 }
 
+/* ---------- avatares (fotos en assets/fotos/, iniciales si no hay) ---------- */
+.avatar {
+  width: 26px; height: 26px; border-radius: 50%; object-fit: cover;
+  vertical-align: middle; margin-right: .45rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .18);
+}
+.avatar-ini {
+  align-items: center; justify-content: center;
+  font-size: .68rem; font-weight: 700; color: #08101f;
+}
+.avatar-lg { width: 58px; height: 58px; font-size: 1.15rem; margin-right: 0; }
+.podio-avatar { margin-top: .4rem; }
+
 /* ---------- podio ---------- */
 .podio {
   display: grid;

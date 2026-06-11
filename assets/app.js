@@ -74,6 +74,42 @@ function teamHTML(name) {
   return `${flagImg(name)}${esc(name)}`;
 }
 
+/* ---------------- fotos de los trallosos ---------------- */
+/* Para poner foto a alguien: sube assets/fotos/<nombre>.jpg (o .png).
+   El archivo se llama como el participante, en minúsculas, sin tildes y con
+   guiones en vez de espacios (p. ej. "Tete" → tete.jpg,
+   "YO NO FUI FUE EL VAR" → no-es-locura-es-agricultura.jpg).
+   Mientras no haya foto se enseñan sus iniciales. */
+
+function fotoSlug(nombre) {
+  return String(nombre).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+function iniciales(nombre) {
+  const w = String(nombre).trim().split(/\s+/);
+  return ((w[0]?.[0] || "?") + (w[1]?.[0] || "")).toUpperCase();
+}
+
+const AVATAR_COLORS = ["#5d8bff", "#2ee59d", "#ff9d40", "#ff5470", "#b07cff", "#3ecbe0"];
+
+function avatarColor(nombre) {
+  let h = 0;
+  for (const c of String(nombre)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return AVATAR_COLORS[h % AVATAR_COLORS.length];
+}
+
+/* si no hay .jpg prueba .png; si tampoco, deja las iniciales */
+function avatarError(img) {
+  if (!img.dataset.png) { img.dataset.png = "1"; img.src = img.src.replace(/\.jpg$/, ".png"); return; }
+  img.style.display = "none";
+  img.nextElementSibling.style.display = "inline-flex";
+}
+
+function avatarHTML(nombre, cls = "") {
+  return `<img class="avatar ${cls}" src="assets/fotos/${fotoSlug(nombre)}.jpg" alt="" loading="lazy" onerror="avatarError(this)"><span class="avatar avatar-ini ${cls}" style="display:none;background:${avatarColor(nombre)}">${esc(iniciales(nombre))}</span>`;
+}
+
 /* ---------------- header ---------------- */
 
 function cuentaAtras(target) {
@@ -95,7 +131,9 @@ function renderPlazo() {
   const btn = s.form_url
     ? ` <a class="btn-form" href="${esc(s.form_url)}" target="_blank" rel="noopener">📝 Rellenar mi porra</a>`
     : "";
-  el.innerHTML = `🔒 Porras selladas hasta el cierre · puedes enviar la tuya hasta mañana a las 21:00 · quedan <b>${restante}</b>${btn}`;
+  const cierre = new Date(s.deadline_utc).toLocaleString("es-ES",
+    { weekday: "long", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
+  el.innerHTML = `🔒 Porras selladas hasta el cierre · puedes enviar la tuya hasta el ${esc(cierre)} · quedan <b>${restante}</b>${btn}`;
   el.classList.remove("hidden");
 }
 
@@ -136,6 +174,7 @@ function renderPodio() {
   $("podio").innerHTML = top.map((p, i) => `
     <div class="podio-card p${i + 1}">
       <div class="podio-medal">${medalla(p.rank)}</div>
+      <div class="podio-avatar">${avatarHTML(p.nombre, "avatar-lg")}</div>
       <div class="podio-nombre">${esc(p.nombre)}</div>
       <div class="podio-puntos">${p.puntos} pts</div>
       <div class="podio-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : ""}${p.premio_especial ? " 🎯" : ""}</div>
@@ -157,7 +196,7 @@ function renderRanking() {
   const rows = D.standings.participantes.map((p, idx) => `
     <tr class="ranking-row" data-idx="${idx}">
       <td class="rank-pos">${medalla(p.rank)}</td>
-      <td><b>${esc(p.nombre)}</b>${p.premio_especial ? " 🎯" : ""}</td>
+      <td>${avatarHTML(p.nombre)}<b>${esc(p.nombre)}</b>${p.premio_especial ? " 🎯" : ""}</td>
       <td class="num rank-puntos">${p.puntos}</td>
       <td class="num muted">${p.max_posible}</td>
       <td class="num rank-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : "—"}</td>
@@ -358,7 +397,7 @@ function renderPredicciones() {
       <p>🤫 <b>Las porras están selladas.</b> Se revelan cuando se cierre el plazo
       (${esc(cierre)}), para que nadie pueda copiar.</p>
       <p class="muted small">Ya han enviado la suya:</p>
-      <ul>${ps.map((p) => `<li><b>${esc(p.nombre)}</b> ✅</li>`).join("")}</ul>`;
+      <ul>${ps.map((p) => `<li>${avatarHTML(p.nombre)}<b>${esc(p.nombre)}</b> ✅</li>`).join("")}</ul>`;
     return;
   }
   $("predicciones-tabla").innerHTML = `<table>
@@ -366,7 +405,7 @@ function renderPredicciones() {
       <th>España llega a</th><th>Revelación</th><th>Decepción</th><th>Final</th></tr></thead>
     <tbody>${ps.map((p, i) => `
       <tr>
-        <td class="pred-nombre" data-idx="${i}">${esc(p.nombre)}</td>
+        <td class="pred-nombre" data-idx="${i}">${avatarHTML(p.nombre)}${esc(p.nombre)}</td>
         <td><span class="pred-pill">${decorate(p.q1)}</span></td>
         <td><span class="pred-pill">${decorate(p.q2)}</span></td>
         <td>${esc(p.q5)}</td>
@@ -385,7 +424,7 @@ function showFicha(p) {
   const grupos = Object.keys(p.grupos || {}).sort().map((L) =>
     `<tr><td>Grupo ${L}</td><td>${decorate(p.grupos[L]["1"])}</td><td>${decorate(p.grupos[L]["2"])}</td></tr>`).join("");
   $("modal-body").innerHTML = `
-    <h2>🔮 La porra de ${esc(p.nombre)}</h2>
+    <h2>${avatarHTML(p.nombre)}La porra de ${esc(p.nombre)}</h2>
     <table>
       <tr><td>Campeón</td><td colspan="2"><b>${decorate(p.q1)}</b></td></tr>
       <tr><td>Subcampeón</td><td colspan="2">${decorate(p.q2)}</td></tr>
