@@ -19,6 +19,7 @@ Se ejecuta desde GitHub Actions cada pocos minutos. Variables de entorno:
 """
 
 import csv
+import difflib
 import io
 import json
 import os
@@ -66,17 +67,22 @@ def norm(s):
     return "".join(c for c in s if unicodedata.category(c) != "Mn")
 
 
+def _sim(a, b):
+    return difflib.SequenceMatcher(None, a, b).ratio()
+
+
 def same_player(prediccion, real):
-    """True si la predicción nombra al mismo jugador (admite solo apellido)."""
+    """True si la predicción nombra al mismo jugador. Tolerante: vale solo el
+    apellido ('Oyarzabal' ~ 'Mikel Oyarzabal') y erratas ('Oyarzaval', 'Mbapé')."""
     a, b = norm(prediccion), norm(real)
     if not a or not b:
         return False
-    if a == b or a in b or b in a:
+    if a == b or a in b or b in a or _sim(a, b) >= 0.8:
         return True
-    # al menos una palabra de >=4 letras en común (apellidos)
-    pa = {w for w in a.split() if len(w) >= 4}
-    pb = {w for w in b.split() if len(w) >= 4}
-    return bool(pa & pb)
+    # alguna palabra de >=4 letras igual o casi igual (apellidos con errata)
+    pa = [w for w in a.split() if len(w) >= 4]
+    pb = [w for w in b.split() if len(w) >= 4]
+    return any(w1 == w2 or _sim(w1, w2) >= 0.8 for w1 in pa for w2 in pb)
 
 
 def player_in(prediccion, lista):
@@ -115,6 +121,11 @@ def sheet_csv_url():
 
 def load_responses():
     """Devuelve (filas, demo). Cada fila es un dict cabecera->valor."""
+    if CONFIG.get("usar_datos_de_ejemplo"):
+        print("Modo ejemplo forzado (config: usar_datos_de_ejemplo)")
+        ejemplo = DATA / "respuestas_ejemplo.csv"
+        with ejemplo.open(encoding="utf-8") as f:
+            return list(csv.DictReader(f)), True
     url = sheet_csv_url()
     if url:
         try:
@@ -181,12 +192,50 @@ def parse_predictions(rows):
     return list(people.values())
 
 
+TODOS_LOS_EQUIPOS = [t for ts in GRUPOS.values() for t in ts]
+
+# nombres alternativos habituales al escribir un equipo a mano
+TEAM_ALIASES = {
+    "holanda": "Países Bajos",
+    "mejico": "México",
+    "qatar": "Catar",
+    "arabia saudita": "Arabia Saudí",
+    "arabia": "Arabia Saudí",
+    "eeuu": "Estados Unidos",
+    "ee uu": "Estados Unidos",
+    "usa": "Estados Unidos",
+    "corea": "Corea del Sur",
+    "republica checa": "Chequia",
+    "turkiye": "Turquía",
+    "congo": "RD Congo",
+    "bosnia": "Bosnia y Herzegovina",
+    "nueva zelanda": "Nueva Zelanda",
+    "costa de marfil": "Costa de Marfil",
+}
+
+
+def canonical_team(s):
+    """Convierte un equipo escrito a mano a su nombre oficial de la porra."""
+    t = norm(s)
+    if not t:
+        return s
+    for name in TODOS_LOS_EQUIPOS:
+        if norm(name) == t:
+            return name
+    if t in TEAM_ALIASES:
+        return TEAM_ALIASES[t]
+    best = max(TODOS_LOS_EQUIPOS, key=lambda n: _sim(norm(n), t))
+    return best if _sim(norm(best), t) >= 0.75 else s.strip()
+
+
 def parse_final_score(text):
-    """'España 2-1 Francia' -> ({'España': 2, 'Francia': 1}) o None."""
+    """'España 2-1 Francia' -> ({'España': 2, 'Francia': 1}) o None.
+    Admite erratas y alias en los nombres ('Holanda', 'Mejico'...)."""
     m = re.match(r"^\s*(.+?)\s+(\d+)\s*[-–]\s*(\d+)\s+(.+?)\s*$", text or "")
     if not m:
         return None
-    return {m.group(1).strip(): int(m.group(2)), m.group(4).strip(): int(m.group(3))}
+    return {canonical_team(m.group(1)): int(m.group(2)),
+            canonical_team(m.group(4)): int(m.group(3))}
 
 
 def parse_minute(text):

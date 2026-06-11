@@ -9,6 +9,8 @@
   "enforce_deadline": true,
   "deadline_utc": "2026-06-12T19:00:00Z",
   "comment_deadline": "Cierre del plazo para responder: 12 de junio a las 21:00 (hora española). Hasta entonces las predicciones se ocultan en la web para que nadie copie.",
+  "usar_datos_de_ejemplo": true,
+  "comment_ejemplo": "Mientras sea true, la web muestra los datos de prueba. Cuando Carlos avise, se pone en false y la web pasa a las respuestas reales de la hoja.",
   "form_url": "",
   "comment_form": "URL del formulario de Google (la de compartir). Si se rellena, la web muestra un botón 'Rellenar mi porra' mientras el plazo esté abierto.",
   "reparto": { "primero": 0.60, "segundo": 0.25, "tercero": 0.10, "especial": 0.05 }
