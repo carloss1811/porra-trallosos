@@ -76,6 +76,29 @@ function teamHTML(name) {
 
 /* ---------------- header ---------------- */
 
+function cuentaAtras(target) {
+  let ms = new Date(target) - Date.now();
+  if (ms <= 0) return null;
+  const d = Math.floor(ms / 86400000);
+  const h = Math.floor(ms / 3600000) % 24;
+  const m = Math.floor(ms / 60000) % 60;
+  const s = Math.floor(ms / 1000) % 60;
+  return d > 0 ? `${d}d ${h}h ${m}m` : h > 0 ? `${h}h ${m}m ${s}s` : `${m}m ${s}s`;
+}
+
+function renderPlazo() {
+  const el = $("plazo-banner");
+  const s = D.standings;
+  if (!s || !s.predicciones_ocultas) { el.classList.add("hidden"); return; }
+  const restante = cuentaAtras(s.deadline_utc);
+  if (!restante) { el.classList.add("hidden"); return; }
+  const btn = s.form_url
+    ? ` <a class="btn-form" href="${esc(s.form_url)}" target="_blank" rel="noopener">📝 Rellenar mi porra</a>`
+    : "";
+  el.innerHTML = `🔒 Porras selladas hasta el cierre · puedes enviar la tuya hasta mañana a las 21:00 · quedan <b>${restante}</b>${btn}`;
+  el.classList.remove("hidden");
+}
+
 function renderHeader() {
   const s = D.standings;
   $("demo-banner").classList.toggle("hidden", !s.demo);
@@ -241,11 +264,26 @@ function renderVivo() {
     ls.innerHTML = "";
   }
 
+  const espana = D.matches.matches
+    .filter((m) => !m.finished && !m.live && (m.home === "España" || m.away === "España"))
+    .sort((a, b) => a.utc.localeCompare(b.utc))[0];
+  const espanaCard = espana ? `
+    <div class="card espana-card">
+      <h2>🇪🇸 Próximo partido de España</h2>
+      <div class="match-line">
+        <span>${teamHTML(espana.home)}</span>
+        <span class="match-score espana-vs" data-utc="${espana.utc}">VS</span>
+        <span>${teamHTML(espana.away)}</span>
+      </div>
+      <div class="match-meta">${STAGE_LABEL[espana.stage] || espana.stage}${espana.group ? ` · Grupo ${espana.group}` : ""}
+        · ${fmtFecha(espana.utc)} · faltan <b class="espana-countdown">${cuentaAtras(espana.utc) || "nada"}</b></div>
+    </div>` : "";
+
   const proximos = D.matches.matches
     .filter((m) => !m.finished && !m.live)
     .sort((a, b) => a.utc.localeCompare(b.utc))
     .slice(0, 8);
-  px.innerHTML = `<div class="card"><h2>📅 Próximos partidos</h2>
+  px.innerHTML = `${espanaCard}<div class="card"><h2>📅 Próximos partidos</h2>
     ${proximos.map((m) => `
       <div class="proximo-item">
         <span>${teamHTML(m.home)} – ${teamHTML(m.away)}</span>
@@ -370,6 +408,7 @@ function showFicha(p) {
 /* ---------------- arranque ---------------- */
 
 function renderAll() {
+  renderPlazo();
   renderHeader();
   renderPodio();
   renderRanking();
@@ -405,5 +444,17 @@ document.querySelectorAll(".tab").forEach((btn) => {
   });
 });
 
+// compartir por WhatsApp
+$("whatsapp-share").href = "https://wa.me/?text=" + encodeURIComponent(
+  "🏆 ¡La Porra Trallosa del Mundial 2026! Mira cómo va la clasificación: " + location.href);
+
 load();
 setInterval(load, 60000); // refresco cada minuto
+
+// cuentas atrás vivas (plazo y partido de España)
+setInterval(() => {
+  renderPlazo();
+  const vs = document.querySelector(".espana-vs");
+  const cd = document.querySelector(".espana-countdown");
+  if (vs && cd) cd.textContent = cuentaAtras(vs.dataset.utc) || "¡ya!";
+}, 1000);

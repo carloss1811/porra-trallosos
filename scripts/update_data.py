@@ -713,6 +713,7 @@ def main():
         "live": live_block,
         "predicciones_ocultas": ocultas,
         "deadline_utc": CONFIG["deadline_utc"],
+        "form_url": CONFIG.get("form_url") or None,
     }
 
     matches_out = {
