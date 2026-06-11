@@ -522,6 +522,7 @@ async function load() {
     ]);
     D = { standings, matches, predictions, history };
     renderAll();
+    refreshLive();
   } catch (e) {
     console.error(e);
     $("ranking").innerHTML = `<p class="muted">No pude cargar los datos (${esc(e.message)}). Si la porra acaba de crearse, ejecuta la action "Actualizar datos" en GitHub.</p>`;
@@ -540,6 +541,68 @@ document.querySelectorAll(".tab").forEach((btn) => {
 
 load();
 setInterval(load, 60000); // refresco cada minuto
+
+/* ----- marcador en directo (ESPN) entre actualizaciones del repo -----
+   Los datos del repo se regeneran cada ~5 min; para el minuto a minuto el
+   navegador consulta el scoreboard público de ESPN y parchea marcador,
+   minuto y estado de los partidos en juego. */
+
+const ESPN_ES = {};
+[["Mexico", "México"], ["South Africa", "Sudáfrica"], ["South Korea", "Corea del Sur"],
+ ["Czechia", "Chequia"], ["Czech Republic", "Chequia"], ["Canada", "Canadá"],
+ ["Bosnia and Herzegovina", "Bosnia y Herzegovina"], ["Bosnia-Herzegovina", "Bosnia y Herzegovina"],
+ ["Qatar", "Catar"], ["Switzerland", "Suiza"], ["Brazil", "Brasil"], ["Morocco", "Marruecos"],
+ ["Haiti", "Haití"], ["Scotland", "Escocia"], ["United States", "Estados Unidos"], ["USA", "Estados Unidos"],
+ ["Paraguay", "Paraguay"], ["Australia", "Australia"], ["Turkey", "Turquía"], ["Türkiye", "Turquía"],
+ ["Germany", "Alemania"], ["Curacao", "Curazao"], ["Curaçao", "Curazao"],
+ ["Ivory Coast", "Costa de Marfil"], ["Côte d'Ivoire", "Costa de Marfil"],
+ ["Ecuador", "Ecuador"], ["Netherlands", "Países Bajos"], ["Japan", "Japón"], ["Sweden", "Suecia"],
+ ["Tunisia", "Túnez"], ["Belgium", "Bélgica"], ["Egypt", "Egipto"], ["Iran", "Irán"],
+ ["New Zealand", "Nueva Zelanda"], ["Spain", "España"], ["Cape Verde", "Cabo Verde"],
+ ["Saudi Arabia", "Arabia Saudí"], ["Uruguay", "Uruguay"], ["France", "Francia"],
+ ["Senegal", "Senegal"], ["Iraq", "Irak"], ["Norway", "Noruega"], ["Argentina", "Argentina"],
+ ["Algeria", "Argelia"], ["Austria", "Austria"], ["Jordan", "Jordania"], ["Portugal", "Portugal"],
+ ["DR Congo", "RD Congo"], ["Congo DR", "RD Congo"], ["Uzbekistan", "Uzbekistán"],
+ ["Colombia", "Colombia"], ["England", "Inglaterra"], ["Croatia", "Croacia"],
+ ["Ghana", "Ghana"], ["Panama", "Panamá"],
+].forEach(([en, es]) => { ESPN_ES[fotoSlug(en)] = es; });
+
+async function refreshLive() {
+  if (!D.matches) return;
+  const ahora = Date.now();
+  // solo consulta si hay un partido en juego o que debería haber empezado hace <3h
+  const interesa = D.matches.matches.some((m) => m.live ||
+    (!m.finished && new Date(m.utc) <= ahora && ahora - new Date(m.utc) < 3 * 3600000));
+  if (!interesa) return;
+  try {
+    const hoy = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    const r = await fetch(`https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=${hoy}`);
+    if (!r.ok) return;
+    const d = await r.json();
+    let cambio = false;
+    for (const ev of d.events || []) {
+      const comp = ev.competitions?.[0];
+      const state = ev.status?.type?.state; // pre / in / post
+      if (!comp || state === "pre") continue;
+      const lados = {};
+      (comp.competitors || []).forEach((c) => { lados[c.homeAway] = c; });
+      const home = ESPN_ES[fotoSlug(lados.home?.team?.displayName || "")];
+      const away = ESPN_ES[fotoSlug(lados.away?.team?.displayName || "")];
+      const m = D.matches.matches.find((x) => !x.finished && x.home === home && x.away === away);
+      if (!m) continue;
+      const gh = +(lados.home?.score ?? 0);
+      const ga = +(lados.away?.score ?? 0);
+      const live = state === "in";
+      const minute = String(ev.status?.displayClock || "").replace(/'$/, "");
+      if (m.gh !== gh || m.ga !== ga || m.live !== live || m.minute !== minute) {
+        Object.assign(m, { gh, ga, live, minute, finished: state === "post" });
+        cambio = true;
+      }
+    }
+    if (cambio) { renderHeader(); renderVivo(); }
+  } catch (e) { /* sin red o ESPN caído: el repo sigue mandando */ }
+}
+setInterval(refreshLive, 60000);
 
 // cuentas atrás vivas (plazo y partido de España)
 setInterval(() => {
