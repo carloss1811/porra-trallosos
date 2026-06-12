@@ -221,7 +221,7 @@ function renderRanking() {
   $("ranking").innerHTML = `
     <h2>Clasificación general</h2>
     <p class="muted small">Toca a un tralloso para ver su desglose pregunta a pregunta. "Máx" es lo que aún puede llegar a sumar.
-      La clasificación va ordenada por los puntos <span class="rk-prov">≈ provisionales</span>: así quedaría si el Mundial acabara hoy. Los dorados son los ya consolidados.
+      Se ordena por los puntos consolidados (dorados) y, en caso de empate, por los <span class="rk-prov">≈ provisionales</span>: así quedaría si el Mundial acabara hoy.
       ${hayPartidoEnJuego() ? 'El puntito rojo <i class="dot-live"></i> avisa de que hay partido en juego y pueden cambiar de un minuto a otro.' : ""}</p>
     <div class="rk">${rows}</div>`;
 

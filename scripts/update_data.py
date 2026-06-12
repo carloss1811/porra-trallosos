@@ -865,13 +865,16 @@ def main():
             for item, ipr in zip(s["desglose"], pr["desglose"]):
                 if item["estado"] == "pendiente" and ipr["puntos"] > item["puntos"]:
                     item["prov"] = ipr["puntos"]
-        # hasta que se juegue la final, la clasificación visible se ordena por
-        # los puntos provisionales (los premios solo se asignan con la final)
+        # hasta que se juegue la final, la clasificación se ordena por los
+        # puntos reales y, a igualdad, deciden los provisionales
         if not st["final_done"]:
-            orden = {s["nombre"]: i for i, s in enumerate(prov_list)}
-            scored.sort(key=lambda s: orden[s["nombre"]])
-            for s in scored:
-                s["rank"] = prov[s["nombre"]]["rank"]
+            def clave(s):
+                return (-s["puntos"], -s["puntos_prov"], s["tiebreak"])
+            scored.sort(key=lambda s: (clave(s), norm(s["nombre"])))
+            prev_key, prev_rank = None, 0
+            for i, s in enumerate(scored, 1):
+                s["rank"] = prev_rank if clave(s) == prev_key else i
+                prev_key, prev_rank = clave(s), s["rank"]
             prizes(scored, st, provisional=True)
     if ocultas:
         for s in scored:
