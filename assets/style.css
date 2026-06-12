@@ -11,6 +11,7 @@
   --green: #34e3a1;
   --red: #ff5470;
   --blue: #6d96ff;
+  --prov: #5de1ff;
   --disp: "Archivo Black", "Space Grotesk", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
 }
@@ -293,6 +294,20 @@ main { max-width: 1060px; margin: 0 auto; padding: 1.2rem; }
 .q-fallado .q-pts { color: var(--red); }
 .q-pendiente .q-pts { color: var(--muted); }
 .q-nota { color: var(--muted); font-size: .68rem; }
+
+/* provisional: como si el Mundial acabara ahora mismo */
+.q-prov { border-left-color: var(--prov); border-left-style: dashed; opacity: 1; }
+.q-prov .q-pts { color: var(--prov); }
+.rk-prov {
+  color: var(--prov); font-family: var(--mono);
+  font-size: .78rem; font-weight: 700; margin-left: .35rem;
+}
+.dot-live {
+  display: inline-block; width: .45rem; height: .45rem;
+  background: var(--red); border-radius: 999px;
+  margin-left: .3rem; vertical-align: .08rem;
+  animation: pulse 1.4s infinite;
+}
 
 /* ---------- tablas genéricas ---------- */
 table { width: 100%; border-collapse: collapse; font-size: .9rem; }

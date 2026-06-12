@@ -535,7 +535,9 @@ def tournament_state(raw_matches, scorers, live_mode=False):
         "pichichi": pichichi,
         "pichichi_decidido": tournament_over,
         "max_gol_esp": max_gol_esp,
+        "max_gol_esp_actual": [goleadores_esp[0]] if goleadores_esp else None,
         "esp_goles": esp_goles,
+        "esp_pj": len(esp_matches),
         "esp_done": esp_done,
         "esp_reached": reached["España"],
         "esp_gana_grupo": tables["H"][0]["equipo"] == "España" if groups_done["H"] else None,
@@ -555,8 +557,10 @@ def q(num, titulo, respuesta, estado, puntos, maximo, nota=""):
             "estado": estado, "puntos": puntos, "max": maximo, "nota": nota}
 
 
-def score_person(p, st):
-    """Puntúa todas las preguntas de una persona contra el estado del torneo."""
+def score_person(p, st, provisional=False):
+    """Puntúa todas las preguntas de una persona contra el estado del torneo.
+    Con provisional=True puntúa como si el Mundial acabara ahora mismo:
+    sirve para enseñar puntos provisionales de lo aún no decidido."""
     items = []
 
     def decidida(cond_acierto, pts):
@@ -592,21 +596,22 @@ def score_person(p, st):
                    f"{pts // 3}/8 acertados"))
 
     # 5 pichichi
-    if st["pichichi_decidido"] and st["pichichi"]:
+    if (st["pichichi_decidido"] or provisional) and st["pichichi"]:
         estado, puntos = decidida(player_in(p.get("q5", ""), st["pichichi"]), 10)
     else:
         estado, puntos = "pendiente", 0
     items.append(q(5, "Máximo goleador del Mundial", p.get("q5", ""), estado, puntos, 10))
 
-    # 6 revelación
-    if st["rev_decidida"]:
+    # 6 revelación (provisional solo cuando alguna no favorita ya pisa eliminatorias)
+    rev_con_sentido = any(st["reached"].get(t, 0) >= 1 for t in st["revelacion"])
+    if st["rev_decidida"] or (provisional and rev_con_sentido):
         estado, puntos = decidida(p.get("q6", "") in st["revelacion"], 8)
     else:
         estado, puntos = "pendiente", 0
     items.append(q(6, "Equipo revelación", p.get("q6", ""), estado, puntos, 8))
 
-    # 7 decepción
-    if st["dec_decidida"]:
+    # 7 decepción (provisional solo cuando alguna favorita ya ha caído)
+    if st["dec_decidida"] or (provisional and st["decepcion"]):
         estado, puntos = decidida(p.get("q7", "") in st["decepcion"], 8)
     else:
         estado, puntos = "pendiente", 0
@@ -614,7 +619,7 @@ def score_person(p, st):
 
     # 8 hasta dónde llega España
     esp_dist = None
-    if st["esp_done"]:
+    if st["esp_done"] or (provisional and st["esp_pj"]):
         actual = RONDAS[st["esp_reached"]]
         pred_idx = RONDAS.index(p.get("q8")) if p.get("q8") in RONDAS else -99
         esp_dist = abs(pred_idx - st["esp_reached"])
@@ -629,22 +634,26 @@ def score_person(p, st):
     items.append(q(8, "¿Hasta dónde llega España?", p.get("q8", ""), estado, puntos, 12, nota))
 
     # 9 España gana su grupo
-    if st["esp_gana_grupo"] is None:
+    gana_grupo = st["esp_gana_grupo"]
+    if gana_grupo is None and provisional and any(r["pj"] for r in st["tables"]["H"]):
+        gana_grupo = st["tables"]["H"][0]["equipo"] == "España"
+    if gana_grupo is None:
         estado, puntos = "pendiente", 0
     else:
-        gana = "Sí" if st["esp_gana_grupo"] else "No"
+        gana = "Sí" if gana_grupo else "No"
         estado, puntos = decidida(norm(p.get("q9", "")) == norm(gana), 5)
     items.append(q(9, "¿España gana su grupo?", p.get("q9", ""), estado, puntos, 5))
 
     # 10 máximo goleador de España
-    if st["max_gol_esp"]:
-        estado, puntos = decidida(player_in(p.get("q10", ""), st["max_gol_esp"]), 8)
+    max_gol = st["max_gol_esp"] or (st["max_gol_esp_actual"] if provisional else None)
+    if max_gol:
+        estado, puntos = decidida(player_in(p.get("q10", ""), max_gol), 8)
     else:
         estado, puntos = "pendiente", 0
     items.append(q(10, "Máximo goleador de España", p.get("q10", ""), estado, puntos, 8))
 
     # 11 goles totales de España (exacto 10 / ±1 5)
-    if st["esp_done"]:
+    if st["esp_done"] or (provisional and st["esp_pj"]):
         try:
             pred = int(re.search(r"\d+", p.get("q11", "")).group())
         except AttributeError:
@@ -670,7 +679,8 @@ def score_person(p, st):
     for letra in GRUPOS:
         pred = p["grupos"].get(letra, {})
         p1, p2 = pred.get("1", ""), pred.get("2", "")
-        if not st["groups_done"][letra]:
+        empezado = any(r["pj"] for r in st["tables"][letra])
+        if not st["groups_done"][letra] and not (provisional and empezado):
             items.append(q(f"G{letra}", f"Grupo {letra}", f"1º {p1} · 2º {p2}", "pendiente", 0, 7))
             continue
         real1, real2 = st["tables"][letra][0]["equipo"], st["tables"][letra][1]["equipo"]
@@ -840,6 +850,19 @@ def main():
     st = tournament_state(raw, scorers)
     scored = rank([score_person(p, st) for p in predictions])
     bote = prizes(scored, st)
+
+    # puntuación provisional: como si el Mundial acabara ahora mismo
+    # (líderes de grupo actuales, pichichi actual, partidos en juego incluidos)
+    if not st["tournament_over"]:
+        st_prov = tournament_state(raw, scorers, live_mode=True)
+        prov = {s["nombre"]: s
+                for s in (score_person(p, st_prov, provisional=True) for p in predictions)}
+        for s in scored:
+            pr = prov[s["nombre"]]
+            s["puntos_prov"] = pr["puntos"]
+            for item, ipr in zip(s["desglose"], pr["desglose"]):
+                if item["estado"] == "pendiente" and ipr["puntos"] > item["puntos"]:
+                    item["prov"] = ipr["puntos"]
     if ocultas:
         for s in scored:
             for item in s["desglose"]:

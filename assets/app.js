@@ -176,19 +176,29 @@ function renderPodio() {
       <span class="podio-num">${p.rank}</span>
       <div class="podio-avatar">${avatarHTML(p.nombre, "avatar-lg")}</div>
       <div class="podio-nombre">${esc(p.nombre)}</div>
-      <div class="podio-puntos">${p.puntos}<small>pts · máx ${p.max_posible}</small></div>
+      <div class="podio-puntos">${p.puntos}<small>pts${p.puntos_prov > p.puntos ? ` · <span class="rk-prov">≈${p.puntos_prov}</span>` : ""} · máx ${p.max_posible}</small></div>
       <div class="podio-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : ""}${p.premio_especial ? " 🎯" : ""}</div>
     </div>`).join("");
 }
 
+function hayPartidoEnJuego() {
+  return D.matches && D.matches.matches.some((m) => m.live);
+}
+
 function desgloseHTML(p) {
-  return `<div class="desglose-grid">${p.desglose.map((i) => `
-    <div class="q-item q-${i.estado}">
-      <div class="q-titulo">${esc(i.titulo)}</div>
+  const enJuego = hayPartidoEnJuego();
+  return `<div class="desglose-grid">${p.desglose.map((i) => {
+    const prov = i.estado === "pendiente" && i.prov != null && i.prov > i.puntos;
+    const pts = i.estado !== "pendiente" ? `${i.puntos}/${i.max}`
+      : prov ? `≈ ${i.prov}/${i.max}` : `⏳ 0/${i.max}`;
+    return `
+    <div class="q-item q-${i.estado}${prov ? " q-prov" : ""}">
+      <div class="q-titulo">${esc(i.titulo)}${prov && enJuego ? '<i class="dot-live" title="hay partido en juego: puede cambiar"></i>' : ""}</div>
       <div class="q-resp">${decorate(i.respuesta) || "—"}</div>
-      <div><span class="q-pts">${i.estado === "pendiente" ? `⏳ 0/${i.max}` : `${i.puntos}/${i.max}`}</span>
+      <div><span class="q-pts">${pts}</span>${prov ? '<span class="q-nota"> · provisional</span>' : ""}
       ${i.nota ? `<span class="q-nota"> · ${decorate(i.nota)}</span>` : ""}</div>
-    </div>`).join("")}</div>`;
+    </div>`;
+  }).join("")}</div>`;
 }
 
 function renderRanking() {
@@ -202,14 +212,16 @@ function renderRanking() {
         <span class="rk-bar"><i style="width:${Math.max(2, (p.puntos / lider) * 100)}%"></i></span>
       </span>
       <span class="rk-max">máx ${p.max_posible}</span>
-      <span class="rk-pts">${p.puntos}</span>
+      <span class="rk-pts">${p.puntos}${p.puntos_prov > p.puntos ? `<span class="rk-prov">≈${p.puntos_prov}${hayPartidoEnJuego() ? '<i class="dot-live"></i>' : ""}</span>` : ""}</span>
       <span class="rk-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : ""}</span>
     </div>
     <div class="desglose hidden" id="desglose-${idx}">${desgloseHTML(p)}</div>`).join("");
 
   $("ranking").innerHTML = `
     <h2>Clasificación general</h2>
-    <p class="muted small">Toca a un tralloso para ver su desglose pregunta a pregunta. "Máx" es lo que aún puede llegar a sumar.</p>
+    <p class="muted small">Toca a un tralloso para ver su desglose pregunta a pregunta. "Máx" es lo que aún puede llegar a sumar.
+      Los puntos <span class="rk-prov">≈ azules</span> son provisionales: así quedaría si el Mundial acabara hoy.
+      ${hayPartidoEnJuego() ? 'El puntito rojo <i class="dot-live"></i> avisa de que hay partido en juego y pueden cambiar de un minuto a otro.' : ""}</p>
     <div class="rk">${rows}</div>`;
 
   document.querySelectorAll(".rk-row").forEach((el) => {
