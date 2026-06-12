@@ -25,6 +25,7 @@ import json
 import os
 import re
 import sys
+import time
 import unicodedata
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -89,10 +90,18 @@ def player_in(prediccion, lista):
     return any(same_player(prediccion, real) for real in lista)
 
 
-def http_get(url, headers=None):
-    req = urllib.request.Request(url, headers=headers or {})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read()
+def http_get(url, headers=None, retries=3):
+    """GET con reintentos: los cortes de red transitorios no deben tumbar
+    la actualización entera."""
+    for intento in range(retries):
+        try:
+            req = urllib.request.Request(url, headers=headers or {})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return r.read()
+        except Exception:  # noqa: BLE001 - reintentamos ante cualquier fallo de red
+            if intento == retries - 1:
+                raise
+            time.sleep(2 * (intento + 1))
 
 
 def api_get(path):

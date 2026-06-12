@@ -36,7 +36,12 @@ jobs:
           for i in $(seq 1 15); do
             echo "::group::Actualización $i/15"
             git pull --rebase origin main
-            python scripts/update_data.py
+            if ! python scripts/update_data.py; then
+              echo "::warning::Actualización fallida (fallo transitorio); se reintenta en el siguiente ciclo"
+              echo "::endgroup::"
+              sleep 60
+              continue
+            fi
             git add data/
             if git diff --cached --quiet; then
               echo "Sin cambios"
