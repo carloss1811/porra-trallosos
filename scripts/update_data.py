@@ -785,8 +785,10 @@ def rank(scored):
     return scored
 
 
-def prizes(scored, st):
-    """Reparte el bote: 60/25/10 por posición (empates comparten) y 5% especial."""
+def prizes(scored, st, provisional=False):
+    """Reparte el bote: 60/25/10 por posición (empates comparten) y 5% especial.
+    Con provisional=True reparte aunque la final no esté jugada (proyección
+    según la clasificación actual; el premio especial espera a la final)."""
     n = len(scored)
     aport = CONFIG.get("aportacion_eur") or 0
     bote = round(n * aport, 2)
@@ -794,7 +796,7 @@ def prizes(scored, st):
     shares = [reparto["primero"], reparto["segundo"], reparto["tercero"]]
     for s in scored:
         s["premio_eur"] = 0.0
-    if bote and st["final_done"]:
+    if bote and (st["final_done"] or provisional):
         pos = 0
         while pos < min(3, n):
             tied = [s for s in scored if s["rank"] == scored[pos]["rank"]]
@@ -870,6 +872,7 @@ def main():
             scored.sort(key=lambda s: orden[s["nombre"]])
             for s in scored:
                 s["rank"] = prov[s["nombre"]]["rank"]
+            prizes(scored, st, provisional=True)
     if ocultas:
         for s in scored:
             for item in s["desglose"]:

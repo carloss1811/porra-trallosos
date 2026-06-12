@@ -177,7 +177,7 @@ function renderPodio() {
       <div class="podio-avatar">${avatarHTML(p.nombre, "avatar-lg")}</div>
       <div class="podio-nombre">${esc(p.nombre)}</div>
       <div class="podio-puntos">${p.puntos}<small>pts${p.puntos_prov > p.puntos ? ` · <span class="rk-prov">≈${p.puntos_prov}</span>` : ""} · máx ${p.max_posible}</small></div>
-      <div class="podio-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : ""}${p.premio_especial ? " 🎯" : ""}</div>
+      <div class="podio-premio">${p.premio_eur ? (D.standings.tournament_over ? "" : "≈ ") + fmtEUR(p.premio_eur) : ""}${p.premio_especial ? " 🎯" : ""}</div>
     </div>`).join("");
 }
 
@@ -214,7 +214,7 @@ function renderRanking() {
       </span>
       <span class="rk-max">máx ${p.max_posible}</span>
       <span class="rk-pts">${p.puntos}${p.puntos_prov > p.puntos ? `<span class="rk-prov">≈${p.puntos_prov}${hayPartidoEnJuego() ? '<i class="dot-live"></i>' : ""}</span>` : ""}</span>
-      <span class="rk-premio">${p.premio_eur ? fmtEUR(p.premio_eur) : ""}</span>
+      <span class="rk-premio">${p.premio_eur ? (D.standings.tournament_over ? "" : "≈ ") + fmtEUR(p.premio_eur) : ""}</span>
     </div>
     <div class="desglose hidden" id="desglose-${idx}">${desgloseHTML(p)}</div>`).join("");
 
