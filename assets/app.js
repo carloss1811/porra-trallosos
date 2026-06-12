@@ -202,14 +202,15 @@ function desgloseHTML(p) {
 }
 
 function renderRanking() {
-  const lider = Math.max(1, ...D.standings.participantes.map((p) => p.puntos));
+  const pts = (x) => x.puntos_prov ?? x.puntos;
+  const lider = Math.max(1, ...D.standings.participantes.map(pts));
   const rows = D.standings.participantes.map((p, idx) => `
     <div class="rk-row" data-idx="${idx}">
       <span class="rk-pos">${p.rank}</span>
       ${avatarHTML(p.nombre)}
       <span class="rk-main">
         <span class="rk-nombre">${esc(p.nombre)}${p.premio_especial ? " 🎯" : ""}</span>
-        <span class="rk-bar"><i style="width:${Math.max(2, (p.puntos / lider) * 100)}%"></i></span>
+        <span class="rk-bar"><i style="width:${Math.max(2, (pts(p) / lider) * 100)}%"></i></span>
       </span>
       <span class="rk-max">máx ${p.max_posible}</span>
       <span class="rk-pts">${p.puntos}${p.puntos_prov > p.puntos ? `<span class="rk-prov">≈${p.puntos_prov}${hayPartidoEnJuego() ? '<i class="dot-live"></i>' : ""}</span>` : ""}</span>
@@ -220,7 +221,7 @@ function renderRanking() {
   $("ranking").innerHTML = `
     <h2>Clasificación general</h2>
     <p class="muted small">Toca a un tralloso para ver su desglose pregunta a pregunta. "Máx" es lo que aún puede llegar a sumar.
-      Los puntos <span class="rk-prov">≈ azules</span> son provisionales: así quedaría si el Mundial acabara hoy.
+      La clasificación va ordenada por los puntos <span class="rk-prov">≈ provisionales</span>: así quedaría si el Mundial acabara hoy. Los dorados son los ya consolidados.
       ${hayPartidoEnJuego() ? 'El puntito rojo <i class="dot-live"></i> avisa de que hay partido en juego y pueden cambiar de un minuto a otro.' : ""}</p>
     <div class="rk">${rows}</div>`;
 

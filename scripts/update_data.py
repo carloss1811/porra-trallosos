@@ -855,14 +855,21 @@ def main():
     # (líderes de grupo actuales, pichichi actual, partidos en juego incluidos)
     if not st["tournament_over"]:
         st_prov = tournament_state(raw, scorers, live_mode=True)
-        prov = {s["nombre"]: s
-                for s in (score_person(p, st_prov, provisional=True) for p in predictions)}
+        prov_list = rank([score_person(p, st_prov, provisional=True) for p in predictions])
+        prov = {s["nombre"]: s for s in prov_list}
         for s in scored:
             pr = prov[s["nombre"]]
             s["puntos_prov"] = pr["puntos"]
             for item, ipr in zip(s["desglose"], pr["desglose"]):
                 if item["estado"] == "pendiente" and ipr["puntos"] > item["puntos"]:
                     item["prov"] = ipr["puntos"]
+        # hasta que se juegue la final, la clasificación visible se ordena por
+        # los puntos provisionales (los premios solo se asignan con la final)
+        if not st["final_done"]:
+            orden = {s["nombre"]: i for i, s in enumerate(prov_list)}
+            scored.sort(key=lambda s: orden[s["nombre"]])
+            for s in scored:
+                s["rank"] = prov[s["nombre"]]["rank"]
     if ocultas:
         for s in scored:
             for item in s["desglose"]:
