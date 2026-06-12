@@ -32,7 +32,7 @@ const TEAM_NAMES = Object.keys(FLAG_CODE).sort((a, b) => b.length - a.length);
 
 function flagImg(name) {
   const code = FLAG_CODE[name];
-  return code ? `<img class="flag-img" src="https://flagcdn.com/32x24/${code}.png" alt="" loading="lazy">` : "";
+  return code ? `<img class="flag-img" src="assets/flags/${code}.png" alt="" loading="lazy">` : "";
 }
 
 /* añade su bandera a cada selección mencionada en un texto libre */
