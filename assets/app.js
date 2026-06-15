@@ -612,7 +612,7 @@ async function refreshLive() {
         cambio = true;
       }
     }
-    if (cambio) { renderHeader(); renderVivo(); }
+    if (cambio) { renderHeader(); renderVivo(); renderRanking(); renderPodio(); }
   } catch (e) { /* sin red o ESPN caído: el repo sigue mandando */ }
 }
 setInterval(refreshLive, 60000);
