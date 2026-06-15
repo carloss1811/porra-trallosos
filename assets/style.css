@@ -449,6 +449,39 @@ td.num, th.num { text-align: right; font-family: var(--mono); }
 .pd-vivo { background: rgba(255,84,112,.06); border-radius: 4px; }
 .pd-espana { background: rgba(242,198,65,.04); }
 
+/* collapsible de partidos anteriores */
+.pd-anteriores {
+  margin-bottom: 1rem;
+  border: 1px solid var(--hair2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.pd-anteriores > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: .65rem 1rem;
+  font-size: .8rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  user-select: none;
+}
+.pd-anteriores > summary::-webkit-details-marker { display: none; }
+.pd-anteriores > summary::before {
+  content: "▸";
+  font-size: .7rem;
+  transition: transform .18s;
+  display: inline-block;
+}
+.pd-anteriores[open] > summary::before { transform: rotate(90deg); }
+.pd-anteriores[open] > summary {
+  border-bottom: 1px solid var(--hair2);
+  color: var(--ink);
+}
+.pd-anteriores-body { padding: 0 .5rem; }
+.pd-anteriores-body .pd-dia { opacity: .6; }
+
 .bracket { display: flex; gap: 1.2rem; overflow-x: auto; padding-bottom: .8rem; }
 .bracket-col { min-width: 215px; display: flex; flex-direction: column; gap: .5rem; }
 .bracket-col h3 {

@@ -416,10 +416,8 @@ function renderListaPartidos() {
     byDate.get(key).matches.push(m);
   }
 
-  const html = [...byDate.entries()].map(([key, { label, matches }]) => {
+  const renderDia = ([key, { label, matches }]) => {
     const esHoy = key === hoyKey;
-    const pasado = !esHoy && key < hoyKey;
-
     const filas = matches.map((m) => {
       const esEspana = m.home === "España" || m.away === "España";
       let marcador;
@@ -438,12 +436,30 @@ function renderListaPartidos() {
         <span class="pd-away">${teamHTML(m.away)}</span>
       </div>`;
     }).join("");
-
-    return `<div class="pd-dia${esHoy ? " pd-dia--hoy" : ""}${pasado ? " pd-dia--pasado" : ""}"${esHoy ? ' id="pd-hoy"' : ""}>
+    return `<div class="pd-dia${esHoy ? " pd-dia--hoy" : ""}"${esHoy ? ' id="pd-hoy"' : ""}>
       <div class="pd-dia-hdr">${esHoy ? '<span class="pd-hoy-badge">HOY</span>' : ""}${label}</div>
       ${filas}
     </div>`;
-  }).join("");
+  };
+
+  const entries = [...byDate.entries()];
+  const pasados = entries.filter(([k]) => k < hoyKey);
+  const hoyYFuturos = entries.filter(([k]) => k >= hoyKey);
+
+  // Últimos 2 días jugados: visibles. El resto: dentro de un <details>
+  const visibles = pasados.slice(-2);
+  const ocultos = pasados.slice(0, -2);
+  const nOcultos = ocultos.reduce((acc, [, { matches }]) => acc + matches.length, 0);
+
+  let html = "";
+  if (ocultos.length) {
+    html += `<details class="pd-anteriores">
+      <summary>${nOcultos} partido${nOcultos !== 1 ? "s" : ""} anteriores</summary>
+      <div class="pd-anteriores-body">${ocultos.map(renderDia).join("")}</div>
+    </details>`;
+  }
+  html += visibles.map(renderDia).join("");
+  html += hoyYFuturos.map(renderDia).join("");
 
   $("lista-partidos").innerHTML = html;
 }
