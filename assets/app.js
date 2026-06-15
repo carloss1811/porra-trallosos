@@ -185,15 +185,33 @@ function hayPartidoEnJuego() {
   return D.matches && D.matches.matches.some((m) => m.live);
 }
 
+// Devuelve true solo si el partido en curso afecta directamente a este item del desglose
+function itemEnJuego(item) {
+  if (!D.matches) return false;
+  const live = D.matches.matches.filter((m) => m.live);
+  if (!live.length) return false;
+  const q = item.q;
+  // Grupos: "GA"–"GL" → solo si hay partido vivo en ese grupo concreto
+  if (typeof q === "string" && /^G[A-L]$/.test(q)) {
+    return live.some((m) => m.group === q[1]);
+  }
+  // Preguntas específicas de España (q=9..12): solo si España está jugando ahora
+  if (q === 9 || q === 10 || q === 11 || q === 12) {
+    return live.some((m) => m.home === "España" || m.away === "España");
+  }
+  // El resto (campeón, semifinalistas, etc.) no cambia durante la fase de grupos
+  return false;
+}
+
 function desgloseHTML(p) {
-  const enJuego = hayPartidoEnJuego();
   return `<div class="desglose-grid">${p.desglose.map((i) => {
     const prov = i.estado === "pendiente" && i.prov != null && i.prov > i.puntos;
+    const enJuego = prov && itemEnJuego(i);
     const pts = i.estado !== "pendiente" ? `${i.puntos}/${i.max}`
       : prov ? `≈ ${i.prov}/${i.max}` : `⏳ 0/${i.max}`;
     return `
     <div class="q-item q-${i.estado}${prov ? " q-prov" : ""}">
-      <div class="q-titulo">${esc(i.titulo)}${prov && enJuego ? '<i class="dot-live" title="hay partido en juego: puede cambiar"></i>' : ""}</div>
+      <div class="q-titulo">${esc(i.titulo)}${enJuego ? '<i class="dot-live" title="hay partido en juego: puede cambiar"></i>' : ""}</div>
       <div class="q-resp">${decorate(i.respuesta) || "—"}</div>
       <div><span class="q-pts">${pts}</span>${prov ? '<span class="q-nota"> · provisional</span>' : ""}
       ${i.nota ? `<span class="q-nota"> · ${decorate(i.nota)}</span>` : ""}</div>
