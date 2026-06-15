@@ -378,6 +378,77 @@ td.num, th.num { text-align: right; font-family: var(--mono); }
 .equipo-cell { display: flex; align-items: center; gap: .45rem; }
 .equipo-cell img { width: 18px; height: 13.5px; }
 
+/* ---------- lista de partidos por día ---------- */
+#lista-partidos { margin-bottom: 2.5rem; }
+.pd-dia { margin-bottom: 1.6rem; }
+.pd-dia--pasado { opacity: .55; }
+.pd-dia-hdr {
+  font-family: var(--disp);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: .45rem .2rem .3rem;
+  border-bottom: 1px solid var(--hair2);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .15rem;
+}
+.pd-dia--hoy .pd-dia-hdr { color: var(--gold); border-bottom-color: rgba(242,198,65,.3); }
+.pd-hoy-badge {
+  background: var(--gold);
+  color: #06080f;
+  font-family: var(--disp);
+  font-size: .58rem;
+  letter-spacing: .06em;
+  padding: .1rem .42rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.pd-item {
+  display: grid;
+  grid-template-columns: 2.8rem 1fr 4.2rem 1fr;
+  align-items: center;
+  gap: .15rem .4rem;
+  padding: .42rem .2rem;
+  border-bottom: 1px solid var(--hair);
+  font-size: .84rem;
+}
+.pd-item img { width: 18px; height: 13.5px; vertical-align: middle; }
+.pd-ctx {
+  font-size: .63rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  letter-spacing: .02em;
+}
+.pd-home {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .3rem;
+}
+.pd-away { display: flex; align-items: center; gap: .3rem; }
+.pd-marcador {
+  text-align: center;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: .95rem;
+  white-space: nowrap;
+}
+.pd-fin { color: var(--ink); }
+.pd-live { color: var(--red); }
+.pd-hora {
+  display: block;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--muted);
+}
+.pd-vivo { background: rgba(255,84,112,.06); border-radius: 4px; }
+.pd-espana { background: rgba(242,198,65,.04); }
+
 .bracket { display: flex; gap: 1.2rem; overflow-x: auto; padding-bottom: .8rem; }
 .bracket-col { min-width: 215px; display: flex; flex-direction: column; gap: .5rem; }
 .bracket-col h3 {

@@ -396,6 +396,58 @@ function renderGoleadores() {
     : '<p class="muted">Todavía no hay goles. Paciencia, tralloso.</p>';
 }
 
+/* ---------- lista de partidos por día ---------- */
+function renderListaPartidos() {
+  const TZ = "Europe/Madrid";
+  const hoyKey = new Date().toLocaleDateString("sv-SE", { timeZone: TZ });
+
+  const ctxAbrev = (m) => m.group ? `Gr. ${m.group}` : ({
+    LAST_32: "1/32", LAST_16: "1/16", QUARTER_FINALS: "QF",
+    SEMI_FINALS: "SF", THIRD_PLACE: "3er", FINAL: "FINAL",
+  }[m.stage] || m.stage);
+
+  const byDate = new Map();
+  for (const m of [...D.matches.matches].sort((a, b) => a.utc.localeCompare(b.utc))) {
+    const key = new Date(m.utc).toLocaleDateString("sv-SE", { timeZone: TZ });
+    const label = new Date(m.utc).toLocaleDateString("es-ES", {
+      timeZone: TZ, weekday: "long", day: "numeric", month: "long",
+    });
+    if (!byDate.has(key)) byDate.set(key, { label, matches: [] });
+    byDate.get(key).matches.push(m);
+  }
+
+  const html = [...byDate.entries()].map(([key, { label, matches }]) => {
+    const esHoy = key === hoyKey;
+    const pasado = !esHoy && key < hoyKey;
+
+    const filas = matches.map((m) => {
+      const esEspana = m.home === "España" || m.away === "España";
+      let marcador;
+      if (m.live) {
+        marcador = `<span class="pd-marcador pd-live">${m.gh ?? 0}–${m.ga ?? 0}<i class="dot-live"></i></span>`;
+      } else if (m.finished) {
+        marcador = `<span class="pd-marcador pd-fin">${m.gh}–${m.ga}</span>`;
+      } else {
+        const hora = new Date(m.utc).toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit", timeZone: TZ });
+        marcador = `<span class="pd-hora">${hora}</span>`;
+      }
+      return `<div class="pd-item${esEspana ? " pd-espana" : ""}${m.live ? " pd-vivo" : ""}">
+        <span class="pd-ctx">${ctxAbrev(m)}</span>
+        <span class="pd-home">${teamHTML(m.home)}</span>
+        ${marcador}
+        <span class="pd-away">${teamHTML(m.away)}</span>
+      </div>`;
+    }).join("");
+
+    return `<div class="pd-dia${esHoy ? " pd-dia--hoy" : ""}${pasado ? " pd-dia--pasado" : ""}"${esHoy ? ' id="pd-hoy"' : ""}>
+      <div class="pd-dia-hdr">${esHoy ? '<span class="pd-hoy-badge">HOY</span>' : ""}${label}</div>
+      ${filas}
+    </div>`;
+  }).join("");
+
+  $("lista-partidos").innerHTML = html;
+}
+
 /* ---------------- predicciones ---------------- */
 
 /* agrupa respuestas de texto libre ignorando mayúsculas y tildes */
@@ -521,6 +573,7 @@ function renderAll() {
   renderRanking();
   renderChart();
   renderVivo();
+  renderListaPartidos();
   renderGrupos();
   renderBracket();
   renderGoleadores();
@@ -549,6 +602,10 @@ document.querySelectorAll(".tab").forEach((btn) => {
     btn.classList.add("active");
     $(`tab-${btn.dataset.tab}`).classList.add("active");
     if (btn.dataset.tab === "clasificacion") renderChart();
+    if (btn.dataset.tab === "partidos") {
+      const hoy = document.getElementById("pd-hoy");
+      if (hoy) setTimeout(() => hoy.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+    }
   });
 });
 
