@@ -894,9 +894,20 @@ def main():
     live_matches = [m for m in st["matches"] if m["live"]]
     live_block = None
     if live_matches:
-        st_live = tournament_state(raw, scorers, live_mode=True)
-        scored_live = rank([score_person(p, st_live) for p in predictions])
-        prizes(scored_live, st_live)
+        # st_live == st_prov (ambos live_mode=True); reutilizamos prov ya calculado
+        scored_live = rank([score_person(p, st_prov) for p in predictions])
+        prizes(scored_live, st_prov)
+        # Añadir puntos_prov y re-ordenar con el mismo criterio que scored
+        for s in scored_live:
+            s["puntos_prov"] = prov[s["nombre"]]["puntos"]
+        def clave_live(s):
+            return (-s["puntos"], -s["puntos_prov"], s["tiebreak"])
+        scored_live.sort(key=lambda s: (clave_live(s), norm(s["nombre"])))
+        prev_key_l, prev_rank_l = None, 0
+        for i, s in enumerate(scored_live, 1):
+            ck = clave_live(s)
+            s["rank"] = prev_rank_l if ck == prev_key_l else i
+            prev_key_l, prev_rank_l = ck, s["rank"]
         oficial = {s["nombre"]: s for s in scored}
         live_block = {
             "participantes": [{
