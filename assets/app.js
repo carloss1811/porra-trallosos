@@ -316,7 +316,8 @@ function renderVivo() {
   }
 
   const lb = D.standings.live;
-  if (lb && live.length) {
+  const hayImpacto = lb && lb.participantes.some((p) => p.delta_puntos !== 0);
+  if (hayImpacto) {
     ls.innerHTML = `<div class="bloque">
       <h2>Ranking provisional (si los partidos acaban así)</h2>
       <div class="table-scroll"><table>
