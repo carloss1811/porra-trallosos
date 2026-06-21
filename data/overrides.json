@@ -1,6 +1,6 @@
 {
   "comment": "Datos que la API gratuita no da y se rellenan a mano editando este archivo (Claude o Carlos). Déjalos en null hasta que se sepan.",
-  "primer_goleador_espana": null,
+  "primer_goleador_espana": "Lamine Yamal",
   "comment_1": "Nombre del jugador que marque el primer gol de España, p. ej. 'Lamine Yamal'.",
   "maximo_goleador_espana": null,
   "comment_2": "Máximo goleador de España al final del Mundial. Si hay empate, lista separada por comas: 'Lamine Yamal, Mikel Oyarzabal'.",
