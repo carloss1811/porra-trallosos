@@ -72,6 +72,8 @@ h2::before {
 
 .bloque { margin-bottom: 2.2rem; }
 
+#chart { display: block; max-width: 100%; height: auto; }
+
 /* ---------- avisos ---------- */
 .demo-banner {
   background: linear-gradient(90deg, #7a5c00, #a07800);

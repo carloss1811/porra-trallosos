@@ -261,8 +261,9 @@ function renderChart() {
   $("chart-empty").textContent = "";
   const dpr = window.devicePixelRatio || 1;
   const W = canvas.clientWidth || canvas.parentElement.clientWidth - 40;
-  const H = 260;
+  const H = 220;
   canvas.width = W * dpr; canvas.height = H * dpr;
+  canvas.style.width = W + "px"; canvas.style.height = H + "px";
   const ctx = canvas.getContext("2d");
   ctx.scale(dpr, dpr);
   const colors = ["#ffc940", "#2ee59d", "#5d8bff", "#ff5470", "#c490ff", "#5de1ff", "#ffa15d", "#9dff5d"];
