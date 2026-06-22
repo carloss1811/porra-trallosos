@@ -72,7 +72,26 @@ h2::before {
 
 .bloque { margin-bottom: 2.2rem; }
 
-#chart { display: block; max-width: 100%; height: auto; }
+#chart { display: block; max-width: 100%; }
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .9rem;
+  margin-top: .8rem;
+}
+.chart-legend .cl-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .76rem;
+  color: var(--muted);
+}
+.chart-legend .cl-item i {
+  width: .7rem;
+  height: .7rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
 
 /* ---------- avisos ---------- */
 .demo-banner {

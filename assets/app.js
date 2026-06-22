@@ -248,27 +248,34 @@ function renderRanking() {
   });
 }
 
+const CHART_COLORS = ["#ffc940", "#2ee59d", "#5d8bff", "#ff5470", "#c490ff",
+  "#5de1ff", "#ffa15d", "#9dff5d", "#ff7bd5", "#7d8bff", "#e0e44a", "#4ad6c2"];
+
 function renderChart() {
   const canvas = $("chart");
+  const legend = $("chart-legend");
   const hist = D.history;
   const names = D.standings.participantes.map((p) => p.nombre);
   if (hist.length < 2) {
     canvas.style.display = "none";
+    if (legend) legend.innerHTML = "";
     $("chart-empty").textContent = "La gráfica aparecerá cuando empiecen a moverse los puntos.";
     return;
   }
   canvas.style.display = "block";
   $("chart-empty").textContent = "";
   const dpr = window.devicePixelRatio || 1;
-  const W = canvas.clientWidth || canvas.parentElement.clientWidth - 40;
-  const H = 220;
+  // ancho real disponible = el del contenedor (el canvas por defecto mide 300px)
+  const W = Math.round(canvas.parentElement.clientWidth);
+  if (W <= 0) return; // panel oculto: se redibuja al volver a la pestaña
+  const H = 200;
   canvas.width = W * dpr; canvas.height = H * dpr;
   canvas.style.width = W + "px"; canvas.style.height = H + "px";
   const ctx = canvas.getContext("2d");
   ctx.scale(dpr, dpr);
-  const colors = ["#ffc940", "#2ee59d", "#5d8bff", "#ff5470", "#c490ff", "#5de1ff", "#ffa15d", "#9dff5d"];
+  const color = (ni) => CHART_COLORS[ni % CHART_COLORS.length];
   const maxPts = Math.max(10, ...hist.flatMap((h) => Object.values(h.puntos)));
-  const pad = { l: 34, r: 8, t: 10, b: 22 };
+  const pad = { l: 30, r: 12, t: 12, b: 20 };
   const x = (i) => pad.l + (i / (hist.length - 1)) * (W - pad.l - pad.r);
   const y = (v) => H - pad.b - (v / maxPts) * (H - pad.t - pad.b);
 
@@ -276,10 +283,11 @@ function renderChart() {
   for (let g = 0; g <= 4; g++) {
     const v = Math.round((maxPts / 4) * g);
     ctx.beginPath(); ctx.moveTo(pad.l, y(v)); ctx.lineTo(W - pad.r, y(v)); ctx.stroke();
-    ctx.fillText(v, 4, y(v) + 3);
+    ctx.fillText(v, 6, y(v) + 3);
   }
+  ctx.lineJoin = "round";
   names.forEach((n, ni) => {
-    ctx.strokeStyle = colors[ni % colors.length];
+    ctx.strokeStyle = color(ni);
     ctx.lineWidth = 2;
     ctx.beginPath();
     hist.forEach((h, i) => {
@@ -287,10 +295,18 @@ function renderChart() {
       i ? ctx.lineTo(x(i), y(v)) : ctx.moveTo(x(i), y(v));
     });
     ctx.stroke();
+    // punto al final de cada línea
     const last = hist[hist.length - 1].puntos[n] ?? 0;
-    ctx.fillStyle = colors[ni % colors.length];
-    ctx.fillText(n.split(" ")[0], Math.min(x(hist.length - 1) + 4, W - 60), y(last) + 3);
+    ctx.fillStyle = color(ni);
+    ctx.beginPath(); ctx.arc(x(hist.length - 1), y(last), 2.5, 0, Math.PI * 2); ctx.fill();
   });
+
+  // leyenda debajo: color + nombre (en vez de etiquetas amontonadas en la gráfica)
+  if (legend) {
+    legend.innerHTML = names.map((n, ni) =>
+      `<span class="cl-item"><i style="background:${color(ni)}"></i>${esc(n)}</span>`
+    ).join("");
+  }
 }
 
 /* ---------------- en vivo ---------------- */
