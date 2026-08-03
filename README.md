@@ -8,9 +8,13 @@ predicciones y reparto del bote, todo automático.
 > El Mundial ya ha terminado y la porra está cerrada. Los datos que se ven en
 > la web son los resultados finales reales, con los nombres de los
 > participantes anonimizados. El cron de actualización automática está
-> desactivado (ya no queda nada que actualizar); el proyecto queda aquí como
-> ejemplo funcional de principio a fin, listo para clonar y reutilizar en
-> otra porra.
+> desactivado (ya no queda nada que actualizar) y, además, `data/config.json`
+> tiene `"porra_cerrada": true`, que hace que `update_data.py` no toque
+> `data/` aunque alguien lance el workflow a mano — así los resultados finales
+> quedan protegidos. El proyecto queda aquí como ejemplo funcional de
+> principio a fin, listo para clonar y reutilizar en otra porra (pon
+> `porra_cerrada` en `false` y rellena `sheet_csv_url`/`form_url`/
+> `deadline_utc`).
 
 ## Cómo funciona
 

@@ -1,5 +1,7 @@
 {
   "comment": "Configuración de la Porra Trallosa. Edita este archivo y haz commit para cambiar valores.",
+  "porra_cerrada": true,
+  "comment_cerrada": "Mientras sea true, scripts/update_data.py no toca data/ (protege los resultados finales congelados). Ponlo en false y rellena sheet_csv_url/form_url/deadline_utc para reutilizar el proyecto en otra porra.",
   "aportacion_eur": 10,
   "comment_aportacion": "Lo que pone cada tralloso. El bote se calcula solo: nº de participantes × aportación. Cámbialo cuando lo decidáis.",
   "sheet_csv_url": "",

@@ -838,6 +838,10 @@ def prizes(scored, st, provisional=False):
 # ------------------------------------------------------------------ main
 
 def main():
+    if CONFIG.get("porra_cerrada"):
+        print("porra_cerrada=true en config.json: no se toca data/, salgo sin hacer nada.")
+        return
+
     raw = api_get("/competitions/WC/matches")["matches"]
     espn_live_overlay(raw)
     try:
