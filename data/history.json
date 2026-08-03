@@ -1,0 +1,325 @@
+[
+  {
+    "ts": "2026-06-27T15:53:33+00:00",
+    "puntos": {
+      "Comandante Croqueta": 60,
+      "El Croissant": 54,
+      "Capitán Chuletón": 54,
+      "El Bigotes": 54,
+      "Don Chorlito": 52,
+      "El Pistacho": 51,
+      "El Refresco": 48,
+      "Rayo Bajito": 47,
+      "Getafikol": 47,
+      "Doctor Chapas": 46,
+      "Vallekol": 45,
+      "YO NO FUI FUE EL VAR": 28
+    }
+  },
+  {
+    "ts": "2026-06-27T18:05:58+00:00",
+    "puntos": {
+      "Comandante Croqueta": 60,
+      "El Pistacho": 54,
+      "Don Chorlito": 52,
+      "El Croissant": 51,
+      "Capitán Chuletón": 51,
+      "El Bigotes": 51,
+      "El Refresco": 45,
+      "Rayo Bajito": 44,
+      "Getafikol": 44,
+      "Doctor Chapas": 43,
+      "Vallekol": 42,
+      "YO NO FUI FUE EL VAR": 28
+    }
+  },
+  {
+    "ts": "2026-06-27T18:11:01+00:00",
+    "puntos": {
+      "Comandante Croqueta": 60,
+      "El Croissant": 54,
+      "Capitán Chuletón": 54,
+      "El Bigotes": 54,
+      "Don Chorlito": 52,
+      "El Pistacho": 51,
+      "El Refresco": 48,
+      "Rayo Bajito": 47,
+      "Getafikol": 47,
+      "Doctor Chapas": 46,
+      "Vallekol": 45,
+      "YO NO FUI FUE EL VAR": 28
+    }
+  },
+  {
+    "ts": "2026-06-27T23:01:08+00:00",
+    "puntos": {
+      "Comandante Croqueta": 64,
+      "El Croissant": 61,
+      "Capitán Chuletón": 61,
+      "El Bigotes": 61,
+      "Don Chorlito": 59,
+      "El Pistacho": 58,
+      "Getafikol": 54,
+      "Vallekol": 52,
+      "El Refresco": 52,
+      "Rayo Bajito": 51,
+      "Doctor Chapas": 50,
+      "YO NO FUI FUE EL VAR": 32
+    }
+  },
+  {
+    "ts": "2026-06-28T01:35:25+00:00",
+    "puntos": {
+      "Comandante Croqueta": 68,
+      "El Croissant": 65,
+      "Capitán Chuletón": 65,
+      "El Bigotes": 65,
+      "Don Chorlito": 63,
+      "El Pistacho": 62,
+      "Getafikol": 58,
+      "Vallekol": 56,
+      "El Refresco": 56,
+      "Rayo Bajito": 55,
+      "Doctor Chapas": 54,
+      "YO NO FUI FUE EL VAR": 36
+    }
+  },
+  {
+    "ts": "2026-06-28T04:01:13+00:00",
+    "puntos": {
+      "Comandante Croqueta": 75,
+      "El Croissant": 72,
+      "Capitán Chuletón": 72,
+      "Don Chorlito": 70,
+      "El Bigotes": 69,
+      "El Pistacho": 69,
+      "Vallekol": 63,
+      "El Refresco": 63,
+      "Getafikol": 62,
+      "Doctor Chapas": 61,
+      "Rayo Bajito": 59,
+      "YO NO FUI FUE EL VAR": 43
+    }
+  },
+  {
+    "ts": "2026-07-04T07:38:37+00:00",
+    "puntos": {
+      "El Bigotes": 77,
+      "Comandante Croqueta": 75,
+      "El Croissant": 72,
+      "Capitán Chuletón": 72,
+      "Vallekol": 71,
+      "Don Chorlito": 70,
+      "El Pistacho": 69,
+      "Rayo Bajito": 67,
+      "El Refresco": 63,
+      "Getafikol": 62,
+      "Doctor Chapas": 61,
+      "YO NO FUI FUE EL VAR": 43
+    }
+  },
+  {
+    "ts": "2026-07-05T06:11:40+00:00",
+    "puntos": {
+      "El Bigotes": 83,
+      "Comandante Croqueta": 78,
+      "Vallekol": 77,
+      "Don Chorlito": 76,
+      "El Croissant": 75,
+      "Capitán Chuletón": 75,
+      "El Pistacho": 72,
+      "Rayo Bajito": 70,
+      "El Refresco": 66,
+      "Getafikol": 65,
+      "Doctor Chapas": 64,
+      "YO NO FUI FUE EL VAR": 49
+    }
+  },
+  {
+    "ts": "2026-07-05T11:23:14+00:00",
+    "puntos": {
+      "El Bigotes": 77,
+      "Comandante Croqueta": 75,
+      "El Croissant": 72,
+      "Capitán Chuletón": 72,
+      "Vallekol": 71,
+      "Don Chorlito": 70,
+      "El Pistacho": 69,
+      "Rayo Bajito": 67,
+      "El Refresco": 63,
+      "Getafikol": 62,
+      "Doctor Chapas": 61,
+      "YO NO FUI FUE EL VAR": 43
+    }
+  },
+  {
+    "ts": "2026-07-05T11:28:18+00:00",
+    "puntos": {
+      "El Bigotes": 83,
+      "Comandante Croqueta": 78,
+      "Vallekol": 77,
+      "Don Chorlito": 76,
+      "El Croissant": 75,
+      "Capitán Chuletón": 75,
+      "El Pistacho": 72,
+      "Rayo Bajito": 70,
+      "El Refresco": 66,
+      "Getafikol": 65,
+      "Doctor Chapas": 64,
+      "YO NO FUI FUE EL VAR": 49
+    }
+  },
+  {
+    "ts": "2026-07-06T06:08:09+00:00",
+    "puntos": {
+      "El Bigotes": 89,
+      "Comandante Croqueta": 81,
+      "Vallekol": 80,
+      "Don Chorlito": 79,
+      "El Croissant": 78,
+      "El Pistacho": 78,
+      "Capitán Chuletón": 75,
+      "Rayo Bajito": 73,
+      "Doctor Chapas": 70,
+      "El Refresco": 69,
+      "Getafikol": 68,
+      "YO NO FUI FUE EL VAR": 49
+    }
+  },
+  {
+    "ts": "2026-07-06T06:13:13+00:00",
+    "puntos": {
+      "El Bigotes": 83,
+      "Comandante Croqueta": 78,
+      "Vallekol": 77,
+      "Don Chorlito": 76,
+      "El Croissant": 75,
+      "Capitán Chuletón": 75,
+      "El Pistacho": 72,
+      "Rayo Bajito": 70,
+      "El Refresco": 66,
+      "Getafikol": 65,
+      "Doctor Chapas": 64,
+      "YO NO FUI FUE EL VAR": 49
+    }
+  },
+  {
+    "ts": "2026-07-06T06:18:17+00:00",
+    "puntos": {
+      "El Bigotes": 89,
+      "Comandante Croqueta": 81,
+      "Vallekol": 80,
+      "Don Chorlito": 79,
+      "El Croissant": 78,
+      "El Pistacho": 78,
+      "Capitán Chuletón": 75,
+      "Rayo Bajito": 73,
+      "Doctor Chapas": 70,
+      "El Refresco": 69,
+      "Getafikol": 68,
+      "YO NO FUI FUE EL VAR": 49
+    }
+  },
+  {
+    "ts": "2026-07-07T07:54:48+00:00",
+    "puntos": {
+      "El Bigotes": 92,
+      "Vallekol": 86,
+      "El Croissant": 84,
+      "Comandante Croqueta": 84,
+      "Don Chorlito": 82,
+      "El Pistacho": 81,
+      "Capitán Chuletón": 78,
+      "Rayo Bajito": 76,
+      "Doctor Chapas": 73,
+      "El Refresco": 72,
+      "Getafikol": 71,
+      "YO NO FUI FUE EL VAR": 52
+    }
+  },
+  {
+    "ts": "2026-07-08T06:17:04+00:00",
+    "puntos": {
+      "El Bigotes": 95,
+      "Vallekol": 89,
+      "El Croissant": 87,
+      "Comandante Croqueta": 87,
+      "Don Chorlito": 85,
+      "El Pistacho": 84,
+      "Capitán Chuletón": 81,
+      "Rayo Bajito": 79,
+      "Doctor Chapas": 76,
+      "El Refresco": 75,
+      "Getafikol": 74,
+      "YO NO FUI FUE EL VAR": 55
+    }
+  },
+  {
+    "ts": "2026-07-10T07:54:08+00:00",
+    "puntos": {
+      "El Bigotes": 101,
+      "Vallekol": 95,
+      "El Croissant": 93,
+      "Comandante Croqueta": 93,
+      "Don Chorlito": 91,
+      "El Pistacho": 90,
+      "Doctor Chapas": 82,
+      "Capitán Chuletón": 81,
+      "Getafikol": 80,
+      "Rayo Bajito": 79,
+      "El Refresco": 75,
+      "YO NO FUI FUE EL VAR": 55
+    }
+  },
+  {
+    "ts": "2026-07-11T06:32:41+00:00",
+    "puntos": {
+      "El Bigotes": 107,
+      "Vallekol": 101,
+      "Comandante Croqueta": 99,
+      "El Croissant": 99,
+      "Don Chorlito": 97,
+      "El Pistacho": 96,
+      "Doctor Chapas": 88,
+      "Getafikol": 86,
+      "Rayo Bajito": 85,
+      "El Refresco": 81,
+      "Capitán Chuletón": 81,
+      "YO NO FUI FUE EL VAR": 61
+    }
+  },
+  {
+    "ts": "2026-07-12T06:38:31+00:00",
+    "puntos": {
+      "El Bigotes": 121,
+      "El Pistacho": 108,
+      "Vallekol": 107,
+      "Comandante Croqueta": 105,
+      "Don Chorlito": 103,
+      "Doctor Chapas": 102,
+      "El Croissant": 99,
+      "Rayo Bajito": 91,
+      "El Refresco": 87,
+      "Capitán Chuletón": 87,
+      "Getafikol": 86,
+      "YO NO FUI FUE EL VAR": 61
+    }
+  },
+  {
+    "ts": "2026-07-19T22:04:18+00:00",
+    "puntos": {
+      "Vallekol": 185,
+      "El Bigotes": 178,
+      "Doctor Chapas": 162,
+      "Comandante Croqueta": 153,
+      "El Pistacho": 145,
+      "Rayo Bajito": 134,
+      "Don Chorlito": 121,
+      "El Croissant": 114,
+      "El Refresco": 105,
+      "YO NO FUI FUE EL VAR": 104,
+      "Getafikol": 101,
+      "Capitán Chuletón": 92
+    }
+  }
+]

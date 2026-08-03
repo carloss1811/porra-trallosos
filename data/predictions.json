@@ -1,0 +1,1016 @@
+{
+  "updated": "2026-07-19T22:04:18+00:00",
+  "demo": false,
+  "ocultas": false,
+  "deadline_utc": "2026-06-12T16:00:00Z",
+  "participantes": [
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Corea del Sur"
+        },
+        "B": {
+          "1": "Catar",
+          "2": "Suiza"
+        },
+        "C": {
+          "1": "Marruecos",
+          "2": "Brasil"
+        },
+        "D": {
+          "1": "Paraguay",
+          "2": "Turquía"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Ecuador"
+        },
+        "F": {
+          "1": "Japón",
+          "2": "Suecia"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Nueva Zelanda"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Senegal"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Panamá"
+        }
+      },
+      "nombre": "YO NO FUI FUE EL VAR",
+      "q1": "España",
+      "q2": "Marruecos",
+      "q3": [
+        "Alemania",
+        "Brasil",
+        "España",
+        "Marruecos"
+      ],
+      "q4": [
+        "Alemania",
+        "Argentina",
+        "Brasil",
+        "España",
+        "Francia",
+        "Marruecos",
+        "Panamá",
+        "Paraguay"
+      ],
+      "q5": "Mikel Oyarzabal",
+      "q6": "Panamá",
+      "q7": "Argentina",
+      "q8": "Final",
+      "q9": "No",
+      "q10": "Mikel Oyarzabal",
+      "q11": "10",
+      "q12": "Mikel Oyarzabal",
+      "q13": "España 1 - 0 Marruecos",
+      "q14": "España",
+      "q15": "No",
+      "q16": "No",
+      "q17": "73"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Sudáfrica"
+        },
+        "B": {
+          "1": "Suiza",
+          "2": "Canadá"
+        },
+        "C": {
+          "1": "Brasil",
+          "2": "Marruecos"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Estados Unidos"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Costa de Marfil"
+        },
+        "F": {
+          "1": "Suecia",
+          "2": "Países Bajos"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Nueva Zelanda"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Croacia"
+        }
+      },
+      "nombre": "Don Chorlito",
+      "q1": "Francia",
+      "q2": "España",
+      "q3": [
+        "Argentina",
+        "Brasil",
+        "España",
+        "Francia"
+      ],
+      "q4": [
+        "Alemania",
+        "Argentina",
+        "Brasil",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Marruecos",
+        "Portugal"
+      ],
+      "q5": "Olise",
+      "q6": "Estados Unidos",
+      "q7": "Bélgica",
+      "q8": "Final",
+      "q9": "Sí",
+      "q10": "Mikel Oyarzabal",
+      "q11": "13",
+      "q12": "Mikel Oyarzabal",
+      "q13": "España 1 - 2 Francia",
+      "q14": "Francia",
+      "q15": "No",
+      "q16": "No",
+      "q17": "47"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "Corea del Sur",
+          "2": "México"
+        },
+        "B": {
+          "1": "Canadá",
+          "2": "Suiza"
+        },
+        "C": {
+          "1": "Brasil",
+          "2": "Marruecos"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Estados Unidos"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Costa de Marfil"
+        },
+        "F": {
+          "1": "Países Bajos",
+          "2": "Japón"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Egipto"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Senegal",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Croacia",
+          "2": "Inglaterra"
+        }
+      },
+      "nombre": "El Refresco",
+      "q1": "Portugal",
+      "q2": "Inglaterra",
+      "q3": [
+        "Brasil",
+        "España",
+        "Inglaterra",
+        "Portugal"
+      ],
+      "q4": [
+        "Alemania",
+        "Argentina",
+        "Brasil",
+        "Colombia",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Portugal"
+      ],
+      "q5": "Cristiano Ronaldo",
+      "q6": "Senegal",
+      "q7": "Francia",
+      "q8": "Semifinales",
+      "q9": "Sí",
+      "q10": "Mikel Oyarzabal",
+      "q11": "12",
+      "q12": "Mikel Oyarzabal",
+      "q13": "Portugal 2 - 1 Inglaterra",
+      "q14": "España",
+      "q15": "No",
+      "q16": "No",
+      "q17": "38"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Chequia"
+        },
+        "B": {
+          "1": "Suiza",
+          "2": "Canadá"
+        },
+        "C": {
+          "1": "Marruecos",
+          "2": "Brasil"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Paraguay"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Ecuador"
+        },
+        "F": {
+          "1": "Japón",
+          "2": "Países Bajos"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Egipto"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Ghana"
+        }
+      },
+      "nombre": "Doctor Chapas",
+      "q1": "España",
+      "q2": "Portugal",
+      "q3": [
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Portugal"
+      ],
+      "q4": [
+        "Alemania",
+        "Argentina",
+        "Ecuador",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Noruega",
+        "Portugal"
+      ],
+      "q5": "Harry Kane",
+      "q6": "Noruega",
+      "q7": "Brasil",
+      "q8": "Campeón",
+      "q9": "Sí",
+      "q10": "Mikel Oyarzabal",
+      "q11": "15",
+      "q12": "Mikel Oyarzabal",
+      "q13": "España 2 - 1 Portugal",
+      "q14": "España",
+      "q15": "No",
+      "q16": "No",
+      "q17": "65"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Corea del Sur"
+        },
+        "B": {
+          "1": "Suiza",
+          "2": "Bosnia y Herzegovina"
+        },
+        "C": {
+          "1": "Brasil",
+          "2": "Marruecos"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Estados Unidos"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Costa de Marfil"
+        },
+        "F": {
+          "1": "Países Bajos",
+          "2": "Japón"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Egipto"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Croacia"
+        }
+      },
+      "nombre": "El Croissant",
+      "q1": "Portugal",
+      "q2": "Francia",
+      "q3": [
+        "Alemania",
+        "España",
+        "Francia",
+        "Portugal"
+      ],
+      "q4": [
+        "Alemania",
+        "Argentina",
+        "Brasil",
+        "Bélgica",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Portugal"
+      ],
+      "q5": "Kylian Mbappe",
+      "q6": "Egipto",
+      "q7": "Argentina",
+      "q8": "Cuartos",
+      "q9": "Sí",
+      "q10": "Dani Olmo",
+      "q11": "9",
+      "q12": "Dani Olmo",
+      "q13": "Portugal 3 - 1 Francia",
+      "q14": "Portugal",
+      "q15": "No",
+      "q16": "Sí",
+      "q17": "7"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Corea del Sur"
+        },
+        "B": {
+          "1": "Canadá",
+          "2": "Suiza"
+        },
+        "C": {
+          "1": "Marruecos",
+          "2": "Brasil"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Estados Unidos"
+        },
+        "E": {
+          "1": "Costa de Marfil",
+          "2": "Alemania"
+        },
+        "F": {
+          "1": "Japón",
+          "2": "Países Bajos"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Egipto"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Croacia"
+        }
+      },
+      "nombre": "Vallekol",
+      "q1": "España",
+      "q2": "Argentina",
+      "q3": [
+        "Argentina",
+        "Marruecos",
+        "España",
+        "Francia"
+      ],
+      "q4": [
+        "Argentina",
+        "Bélgica",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Japón",
+        "Marruecos",
+        "Portugal"
+      ],
+      "q5": "Kylian Mbappe",
+      "q6": "Japón",
+      "q7": "Alemania",
+      "q8": "Campeón",
+      "q9": "Sí",
+      "q10": "Mikel Oyarzabal",
+      "q11": "16",
+      "q12": "Mikel Oyarzabal",
+      "q13": "España 1 - 1 Argentina",
+      "q14": "España",
+      "q15": "Sí",
+      "q16": "No",
+      "q17": "18"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Sudáfrica"
+        },
+        "B": {
+          "1": "Suiza",
+          "2": "Canadá"
+        },
+        "C": {
+          "1": "Brasil",
+          "2": "Marruecos"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Estados Unidos"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Ecuador"
+        },
+        "F": {
+          "1": "Países Bajos",
+          "2": "Japón"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Irán"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Senegal"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Croacia"
+        }
+      },
+      "nombre": "El Pistacho",
+      "q1": "Francia",
+      "q2": "España",
+      "q3": [
+        "Argentina",
+        "España",
+        "Francia",
+        "Inglaterra"
+      ],
+      "q4": [
+        "Alemania",
+        "Argentina",
+        "Brasil",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Noruega",
+        "Portugal"
+      ],
+      "q5": "Kylian Mbappe",
+      "q6": "Senegal",
+      "q7": "Brasil",
+      "q8": "Campeón",
+      "q9": "Sí",
+      "q10": "Dani Olmo",
+      "q11": "13",
+      "q12": "Ferran Torres",
+      "q13": "España 1 - 0 Brasil",
+      "q14": "España",
+      "q15": "No",
+      "q16": "Sí",
+      "q17": "17"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "Corea del Sur",
+          "2": "México"
+        },
+        "B": {
+          "1": "Suiza",
+          "2": "Bosnia y Herzegovina"
+        },
+        "C": {
+          "1": "Brasil",
+          "2": "Escocia"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Estados Unidos"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Costa de Marfil"
+        },
+        "F": {
+          "1": "Países Bajos",
+          "2": "Suecia"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Egipto"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Croacia"
+        }
+      },
+      "nombre": "Capitán Chuletón",
+      "q1": "Portugal",
+      "q2": "Alemania",
+      "q3": [
+        "Alemania",
+        "Brasil",
+        "Inglaterra",
+        "Portugal"
+      ],
+      "q4": [
+        "Alemania",
+        "Argentina",
+        "Brasil",
+        "Colombia",
+        "España",
+        "Francia",
+        "Países Bajos",
+        "Portugal"
+      ],
+      "q5": "Cristiano Ronaldo",
+      "q6": "Colombia",
+      "q7": "Marruecos",
+      "q8": "Cuartos",
+      "q9": "Sí",
+      "q10": "Lamine Yamal",
+      "q11": "11",
+      "q12": "Lamine Yamal",
+      "q13": "Portugal 1 - 0 Alemania",
+      "q14": "Portugal",
+      "q15": "No",
+      "q16": "No",
+      "q17": "62"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Corea del Sur"
+        },
+        "B": {
+          "1": "Suiza",
+          "2": "Canadá"
+        },
+        "C": {
+          "1": "Brasil",
+          "2": "Marruecos"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Estados Unidos"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Ecuador"
+        },
+        "F": {
+          "1": "Países Bajos",
+          "2": "Japón"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Egipto"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Argelia"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Croacia"
+        }
+      },
+      "nombre": "El Bigotes",
+      "q1": "España",
+      "q2": "Portugal",
+      "q3": [
+        "Argentina",
+        "España",
+        "Francia",
+        "Portugal"
+      ],
+      "q4": [
+        "Argentina",
+        "Brasil",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Marruecos",
+        "Noruega",
+        "Portugal"
+      ],
+      "q5": "Kylian Mbappe",
+      "q6": "Noruega",
+      "q7": "Países Bajos",
+      "q8": "Campeón",
+      "q9": "Sí",
+      "q10": "Ferran Torres",
+      "q11": "10",
+      "q12": "Mikel Oyarzabal",
+      "q13": "España 1 - 0 Portugal",
+      "q14": "España",
+      "q15": "No",
+      "q16": "No",
+      "q17": "65"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Corea del Sur"
+        },
+        "B": {
+          "1": "Canadá",
+          "2": "Bosnia y Herzegovina"
+        },
+        "C": {
+          "1": "Brasil",
+          "2": "Marruecos"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Paraguay"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Ecuador"
+        },
+        "F": {
+          "1": "Países Bajos",
+          "2": "Japón"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Egipto"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Argelia"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Croacia"
+        }
+      },
+      "nombre": "Getafikol",
+      "q1": "Francia",
+      "q2": "España",
+      "q3": [
+        "Alemania",
+        "Brasil",
+        "España",
+        "Francia"
+      ],
+      "q4": [
+        "Alemania",
+        "Argentina",
+        "Brasil",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Países Bajos",
+        "Portugal"
+      ],
+      "q5": "Kylian Mbappe",
+      "q6": "Colombia",
+      "q7": "Bélgica",
+      "q8": "Final",
+      "q9": "Sí",
+      "q10": "Lamine Yamal",
+      "q11": "5",
+      "q12": "Ferran Torres",
+      "q13": "España 0 - 2 Francia",
+      "q14": "Francia",
+      "q15": "No",
+      "q16": "No",
+      "q17": "70"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "México",
+          "2": "Corea del Sur"
+        },
+        "B": {
+          "1": "Suiza",
+          "2": "Catar"
+        },
+        "C": {
+          "1": "Marruecos",
+          "2": "Brasil"
+        },
+        "D": {
+          "1": "Estados Unidos",
+          "2": "Paraguay"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Costa de Marfil"
+        },
+        "F": {
+          "1": "Japón",
+          "2": "Países Bajos"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Egipto"
+        },
+        "H": {
+          "1": "España",
+          "2": "Arabia Saudí"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Senegal"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Argelia"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Ghana"
+        }
+      },
+      "nombre": "Rayo Bajito",
+      "q1": "España",
+      "q2": "Portugal",
+      "q3": [
+        "Argentina",
+        "Brasil",
+        "España",
+        "Portugal"
+      ],
+      "q4": [
+        "Argentina",
+        "Croacia",
+        "España",
+        "Francia",
+        "Ghana",
+        "Inglaterra",
+        "México",
+        "Portugal"
+      ],
+      "q5": "Harry Kane",
+      "q6": "Ghana",
+      "q7": "Alemania",
+      "q8": "Final",
+      "q9": "Sí",
+      "q10": "Mikel Oyarzabal",
+      "q11": "7",
+      "q12": "Mikel Oyarzabal",
+      "q13": "España 2 - 1 Portugal",
+      "q14": "España",
+      "q15": "No",
+      "q16": "No",
+      "q17": "41"
+    },
+    {
+      "grupos": {
+        "A": {
+          "1": "Corea del Sur",
+          "2": "México"
+        },
+        "B": {
+          "1": "Suiza",
+          "2": "Canadá"
+        },
+        "C": {
+          "1": "Brasil",
+          "2": "Marruecos"
+        },
+        "D": {
+          "1": "Turquía",
+          "2": "Estados Unidos"
+        },
+        "E": {
+          "1": "Alemania",
+          "2": "Costa de Marfil"
+        },
+        "F": {
+          "1": "Países Bajos",
+          "2": "Japón"
+        },
+        "G": {
+          "1": "Bélgica",
+          "2": "Nueva Zelanda"
+        },
+        "H": {
+          "1": "España",
+          "2": "Uruguay"
+        },
+        "I": {
+          "1": "Francia",
+          "2": "Noruega"
+        },
+        "J": {
+          "1": "Argentina",
+          "2": "Austria"
+        },
+        "K": {
+          "1": "Portugal",
+          "2": "Colombia"
+        },
+        "L": {
+          "1": "Inglaterra",
+          "2": "Ghana"
+        }
+      },
+      "nombre": "Comandante Croqueta",
+      "q1": "España",
+      "q2": "Francia",
+      "q3": [
+        "Argentina",
+        "España",
+        "Francia",
+        "Portugal"
+      ],
+      "q4": [
+        "Argentina",
+        "Brasil",
+        "Costa de Marfil",
+        "España",
+        "Francia",
+        "Inglaterra",
+        "Japón",
+        "Portugal"
+      ],
+      "q5": "Cristiano Ronaldo",
+      "q6": "Japón",
+      "q7": "Marruecos",
+      "q8": "Semifinales",
+      "q9": "Sí",
+      "q10": "Mikel Oyarzabal",
+      "q11": "13",
+      "q12": "Lamine Yamal",
+      "q13": "Francia 2 - 1 España",
+      "q14": "España",
+      "q15": "No",
+      "q16": "Sí",
+      "q17": "19"
+    }
+  ]
+}

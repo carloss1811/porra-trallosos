@@ -1,11 +1,9 @@
 name: Actualizar datos de la porra
 
 on:
-  schedule:
-    # GitHub retrasa mucho los crons programados (a veces más de una hora).
-    # Para compensar, cada ejecución se queda en bucle ~75 min actualizando
-    # cada ~9 min; cuando arranca la siguiente, cancela a la anterior.
-    - cron: "*/10 * * * *"
+  # El Mundial ya terminó y la porra está cerrada, así que el cron programado
+  # se ha desactivado (no queda nada que actualizar). Se deja workflow_dispatch
+  # por si en otro torneo se reutiliza este proyecto.
   workflow_dispatch:
 
 permissions:

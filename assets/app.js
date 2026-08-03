@@ -78,7 +78,7 @@ function teamHTML(name) {
 /* Para poner foto a alguien: sube assets/fotos/<nombre>.jpg (o .png).
    El archivo se llama como el participante, en minúsculas, sin tildes y con
    guiones en vez de espacios (p. ej. "Tete" → tete.jpg,
-   "YO NO FUI FUE EL VAR" → no-es-locura-es-agricultura.jpg).
+   "El Refresco" → el-refresco.jpg).
    Mientras no haya foto se enseñan sus iniciales. */
 
 function fotoSlug(nombre) {

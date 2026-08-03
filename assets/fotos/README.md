@@ -17,9 +17,9 @@ Formato: `.jpg` o `.png` (si existen los dos, gana el `.jpg`).
 | Participante | Archivo |
 |---|---|
 | `Tete` | `tete.jpg` |
-| `Don Chorlito` | `artem.jpg` |
-| `El Refresco` | `pozuelikol.jpg` |
-| `YO NO FUI FUE EL VAR` | `no-es-locura-es-agricultura.jpg` |
+| `Don Chorlito` | `don-chorlito.jpg` |
+| `El Refresco` | `el-refresco.jpg` |
+| `YO NO FUI FUE EL VAR` | `yo-no-fui-fue-el-var.jpg` |
 
 ## Consejos
 

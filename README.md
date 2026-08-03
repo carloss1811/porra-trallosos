@@ -5,6 +5,13 @@ predicciones y reparto del bote, todo automático.
 
 **Web:** https://carloss1811.github.io/porra-trallosos/
 
+> El Mundial ya ha terminado y la porra está cerrada. Los datos que se ven en
+> la web son los resultados finales reales, con los nombres de los
+> participantes anonimizados. El cron de actualización automática está
+> desactivado (ya no queda nada que actualizar); el proyecto queda aquí como
+> ejemplo funcional de principio a fin, listo para clonar y reutilizar en
+> otra porra.
+
 ## Cómo funciona
 
 ```

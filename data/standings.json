@@ -1,0 +1,3387 @@
+{
+  "updated": "2026-07-19T22:04:18+00:00",
+  "demo": false,
+  "bote_eur": 120,
+  "aportacion_eur": 10,
+  "n_participantes": 12,
+  "tournament_over": true,
+  "campeon": "España",
+  "participantes": [
+    {
+      "nombre": "Vallekol",
+      "puntos": 185,
+      "max_posible": 200,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 25,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Argentina",
+          "estado": "acertado",
+          "puntos": 18,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Argentina, Marruecos, España, Francia",
+          "estado": "acertado",
+          "puntos": 18,
+          "max": 24,
+          "nota": "3/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Argentina, Bélgica, España, Francia, Inglaterra, Japón, Marruecos, Portugal",
+          "estado": "acertado",
+          "puntos": 18,
+          "max": 24,
+          "nota": "6/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Kylian Mbappe",
+          "estado": "acertado",
+          "puntos": 10,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Japón",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Alemania",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Campeón",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "16",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Corea del Sur",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Canadá · 2º Suiza",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Marruecos · 2º Brasil",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Estados Unidos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Costa de Marfil · 2º Alemania",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Japón · 2º Países Bajos",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Egipto",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Croacia",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "España 1 - 1 Argentina",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "Sí",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "18",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        0,
+        0,
+        -3,
+        -6,
+        0,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 18,
+      "rank": 1,
+      "premio_eur": 72.0
+    },
+    {
+      "nombre": "El Bigotes",
+      "puntos": 178,
+      "max_posible": 193,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 25,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Argentina, España, Francia, Portugal",
+          "estado": "acertado",
+          "puntos": 18,
+          "max": 24,
+          "nota": "3/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Argentina, Brasil, España, Francia, Inglaterra, Marruecos, Noruega, Portugal",
+          "estado": "acertado",
+          "puntos": 18,
+          "max": 24,
+          "nota": "6/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Kylian Mbappe",
+          "estado": "acertado",
+          "puntos": 10,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Noruega",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Países Bajos",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Campeón",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Ferran Torres",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "10",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Corea del Sur",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Suiza · 2º Canadá",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Brasil · 2º Marruecos",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Estados Unidos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Ecuador",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Países Bajos · 2º Japón",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Egipto",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Argelia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Croacia",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "España 1 - 0 Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "65",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        0,
+        1,
+        -3,
+        -6,
+        0,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 65,
+      "rank": 2,
+      "premio_eur": 30.0
+    },
+    {
+      "nombre": "Doctor Chapas",
+      "puntos": 162,
+      "max_posible": 177,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 25,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "España, Francia, Inglaterra, Portugal",
+          "estado": "acertado",
+          "puntos": 18,
+          "max": 24,
+          "nota": "3/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Alemania, Argentina, Ecuador, España, Francia, Inglaterra, Noruega, Portugal",
+          "estado": "acertado",
+          "puntos": 15,
+          "max": 24,
+          "nota": "5/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Harry Kane",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Noruega",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Brasil",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Campeón",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "15",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Chequia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Suiza · 2º Canadá",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Marruecos · 2º Brasil",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Paraguay",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Ecuador",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Japón · 2º Países Bajos",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Egipto",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Ghana",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "España 2 - 1 Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "65",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        0,
+        1,
+        -3,
+        -5,
+        0,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 65,
+      "rank": 3,
+      "premio_eur": 12.0
+    },
+    {
+      "nombre": "Comandante Croqueta",
+      "puntos": 153,
+      "max_posible": 168,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 25,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Argentina, España, Francia, Portugal",
+          "estado": "acertado",
+          "puntos": 18,
+          "max": 24,
+          "nota": "3/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Argentina, Brasil, Costa de Marfil, España, Francia, Inglaterra, Japón, Portugal",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "4/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Cristiano Ronaldo",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Japón",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Marruecos",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Semifinales",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "13",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Lamine Yamal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º Corea del Sur · 2º México",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Suiza · 2º Canadá",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Brasil · 2º Marruecos",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Estados Unidos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Costa de Marfil",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Países Bajos · 2º Japón",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Nueva Zelanda",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Ghana",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "Francia 2 - 1 España",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "Sí",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "19",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        0,
+        1,
+        -3,
+        -4,
+        2,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 19,
+      "rank": 4,
+      "premio_eur": 0.0
+    },
+    {
+      "nombre": "El Pistacho",
+      "puntos": 145,
+      "max_posible": 160,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "España",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Argentina, España, Francia, Inglaterra",
+          "estado": "acertado",
+          "puntos": 24,
+          "max": 24,
+          "nota": "4/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Alemania, Argentina, Brasil, España, Francia, Inglaterra, Noruega, Portugal",
+          "estado": "acertado",
+          "puntos": 15,
+          "max": 24,
+          "nota": "5/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Kylian Mbappe",
+          "estado": "acertado",
+          "puntos": 10,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Senegal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Brasil",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Campeón",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Dani Olmo",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "13",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Ferran Torres",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Sudáfrica",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Suiza · 2º Canadá",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Brasil · 2º Marruecos",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Estados Unidos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Ecuador",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Países Bajos · 2º Japón",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Irán",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Senegal",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Croacia",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "España 1 - 0 Brasil",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "Sí",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "17",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        1,
+        1,
+        -4,
+        -5,
+        0,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 17,
+      "rank": 5,
+      "premio_eur": 0.0
+    },
+    {
+      "nombre": "Rayo Bajito",
+      "puntos": 134,
+      "max_posible": 149,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 25,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Argentina, Brasil, España, Portugal",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "2/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Argentina, Croacia, España, Francia, Ghana, Inglaterra, México, Portugal",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "4/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Harry Kane",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Ghana",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Alemania",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Final",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "7",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Corea del Sur",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Suiza · 2º Catar",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Marruecos · 2º Brasil",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Estados Unidos · 2º Paraguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Costa de Marfil",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Japón · 2º Países Bajos",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Egipto",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Arabia Saudí",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Senegal",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Argelia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Ghana",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "España 2 - 1 Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "41",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        0,
+        1,
+        -2,
+        -4,
+        1,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 41,
+      "rank": 6,
+      "premio_eur": 0.0
+    },
+    {
+      "nombre": "Don Chorlito",
+      "puntos": 121,
+      "max_posible": 136,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "España",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Argentina, Brasil, España, Francia",
+          "estado": "acertado",
+          "puntos": 18,
+          "max": 24,
+          "nota": "3/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Alemania, Argentina, Brasil, España, Francia, Inglaterra, Marruecos, Portugal",
+          "estado": "acertado",
+          "puntos": 15,
+          "max": 24,
+          "nota": "5/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Olise",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Estados Unidos",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Bélgica",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Final",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "13",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Sudáfrica",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Suiza · 2º Canadá",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Brasil · 2º Marruecos",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Estados Unidos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Costa de Marfil",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Suecia · 2º Países Bajos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Nueva Zelanda",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Croacia",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "España 1 - 2 Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "47",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        1,
+        1,
+        -3,
+        -5,
+        1,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 47,
+      "rank": 7,
+      "premio_eur": 0.0
+    },
+    {
+      "nombre": "El Croissant",
+      "puntos": 114,
+      "max_posible": 129,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Alemania, España, Francia, Portugal",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "2/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Alemania, Argentina, Brasil, Bélgica, España, Francia, Inglaterra, Portugal",
+          "estado": "acertado",
+          "puntos": 15,
+          "max": 24,
+          "nota": "5/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Kylian Mbappe",
+          "estado": "acertado",
+          "puntos": 10,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Egipto",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Argentina",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Cuartos",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Dani Olmo",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "9",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Dani Olmo",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Corea del Sur",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Suiza · 2º Bosnia y Herzegovina",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Brasil · 2º Marruecos",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Estados Unidos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Costa de Marfil",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Países Bajos · 2º Japón",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Egipto",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Croacia",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "Portugal 3 - 1 Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "Sí",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "7",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        1,
+        1,
+        -2,
+        -5,
+        3,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 7,
+      "rank": 8,
+      "premio_eur": 0.0
+    },
+    {
+      "nombre": "El Refresco",
+      "puntos": 105,
+      "max_posible": 120,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Inglaterra",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Brasil, España, Inglaterra, Portugal",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "2/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Alemania, Argentina, Brasil, Colombia, España, Francia, Inglaterra, Portugal",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "4/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Cristiano Ronaldo",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Senegal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Semifinales",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "12",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º Corea del Sur · 2º México",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Canadá · 2º Suiza",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Brasil · 2º Marruecos",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Estados Unidos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Costa de Marfil",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Países Bajos · 2º Japón",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Egipto",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Senegal · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 3,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Croacia · 2º Inglaterra",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "Portugal 2 - 1 Inglaterra",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "38",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        1,
+        1,
+        -2,
+        -4,
+        2,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 38,
+      "rank": 9,
+      "premio_eur": 0.0
+    },
+    {
+      "nombre": "YO NO FUI FUE EL VAR",
+      "puntos": 104,
+      "max_posible": 119,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 25,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Marruecos",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Alemania, Brasil, España, Marruecos",
+          "estado": "acertado",
+          "puntos": 6,
+          "max": 24,
+          "nota": "1/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Alemania, Argentina, Brasil, España, Francia, Marruecos, Panamá, Paraguay",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "4/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Panamá",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Argentina",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Final",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "No",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "10",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Mikel Oyarzabal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Corea del Sur",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Catar · 2º Suiza",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Marruecos · 2º Brasil",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Paraguay · 2º Turquía",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Ecuador",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Japón · 2º Suecia",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Nueva Zelanda",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Senegal",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Panamá",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "España 1 - 0 Marruecos",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "España",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "73",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        0,
+        1,
+        -1,
+        -4,
+        1,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 73,
+      "rank": 10,
+      "premio_eur": 0.0
+    },
+    {
+      "nombre": "Getafikol",
+      "puntos": 101,
+      "max_posible": 116,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "España",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Alemania, Brasil, España, Francia",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "2/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Alemania, Argentina, Brasil, España, Francia, Inglaterra, Países Bajos, Portugal",
+          "estado": "acertado",
+          "puntos": 12,
+          "max": 24,
+          "nota": "4/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Kylian Mbappe",
+          "estado": "acertado",
+          "puntos": 10,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Colombia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Bélgica",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Final",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Lamine Yamal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "5",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Ferran Torres",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º México · 2º Corea del Sur",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Canadá · 2º Bosnia y Herzegovina",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Brasil · 2º Marruecos",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Paraguay",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Ecuador",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Países Bajos · 2º Japón",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Egipto",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Argelia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Croacia",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "España 0 - 2 Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "Francia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "70",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        1,
+        1,
+        -2,
+        -4,
+        1,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 70,
+      "rank": 11,
+      "premio_eur": 0.0
+    },
+    {
+      "nombre": "Capitán Chuletón",
+      "puntos": 92,
+      "max_posible": 107,
+      "desglose": [
+        {
+          "q": 1,
+          "titulo": "Campeón",
+          "respuesta": "Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 25,
+          "nota": ""
+        },
+        {
+          "q": 2,
+          "titulo": "Subcampeón",
+          "respuesta": "Alemania",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 18,
+          "nota": ""
+        },
+        {
+          "q": 3,
+          "titulo": "Semifinalistas",
+          "respuesta": "Alemania, Brasil, Inglaterra, Portugal",
+          "estado": "acertado",
+          "puntos": 6,
+          "max": 24,
+          "nota": "1/4 acertados"
+        },
+        {
+          "q": 4,
+          "titulo": "Cuartofinalistas",
+          "respuesta": "Alemania, Argentina, Brasil, Colombia, España, Francia, Países Bajos, Portugal",
+          "estado": "acertado",
+          "puntos": 9,
+          "max": 24,
+          "nota": "3/8 acertados"
+        },
+        {
+          "q": 5,
+          "titulo": "Máximo goleador del Mundial",
+          "respuesta": "Cristiano Ronaldo",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        },
+        {
+          "q": 6,
+          "titulo": "Equipo revelación",
+          "respuesta": "Colombia",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 7,
+          "titulo": "Equipo decepción",
+          "respuesta": "Marruecos",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 8,
+          "titulo": "¿Hasta dónde llega España?",
+          "respuesta": "Cuartos",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": "España: Campeón"
+        },
+        {
+          "q": 9,
+          "titulo": "¿España gana su grupo?",
+          "respuesta": "Sí",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 10,
+          "titulo": "Máximo goleador de España",
+          "respuesta": "Lamine Yamal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": 11,
+          "titulo": "Goles totales de España",
+          "respuesta": "11",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 10,
+          "nota": "España marcó 14"
+        },
+        {
+          "q": 12,
+          "titulo": "Primer goleador de España",
+          "respuesta": "Lamine Yamal",
+          "estado": "acertado",
+          "puntos": 8,
+          "max": 8,
+          "nota": ""
+        },
+        {
+          "q": "GA",
+          "titulo": "Grupo A",
+          "respuesta": "1º Corea del Sur · 2º México",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º México · 2º Sudáfrica"
+        },
+        {
+          "q": "GB",
+          "titulo": "Grupo B",
+          "respuesta": "1º Suiza · 2º Bosnia y Herzegovina",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Suiza · 2º Canadá"
+        },
+        {
+          "q": "GC",
+          "titulo": "Grupo C",
+          "respuesta": "1º Brasil · 2º Escocia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Brasil · 2º Marruecos"
+        },
+        {
+          "q": "GD",
+          "titulo": "Grupo D",
+          "respuesta": "1º Turquía · 2º Estados Unidos",
+          "estado": "acertado",
+          "puntos": 2,
+          "max": 7,
+          "nota": "real: 1º Estados Unidos · 2º Australia"
+        },
+        {
+          "q": "GE",
+          "titulo": "Grupo E",
+          "respuesta": "1º Alemania · 2º Costa de Marfil",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Alemania · 2º Costa de Marfil"
+        },
+        {
+          "q": "GF",
+          "titulo": "Grupo F",
+          "respuesta": "1º Países Bajos · 2º Suecia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Países Bajos · 2º Japón"
+        },
+        {
+          "q": "GG",
+          "titulo": "Grupo G",
+          "respuesta": "1º Bélgica · 2º Egipto",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Bélgica · 2º Egipto"
+        },
+        {
+          "q": "GH",
+          "titulo": "Grupo H",
+          "respuesta": "1º España · 2º Uruguay",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º España · 2º Cabo Verde"
+        },
+        {
+          "q": "GI",
+          "titulo": "Grupo I",
+          "respuesta": "1º Francia · 2º Noruega",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Francia · 2º Noruega"
+        },
+        {
+          "q": "GJ",
+          "titulo": "Grupo J",
+          "respuesta": "1º Argentina · 2º Austria",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Argentina · 2º Austria"
+        },
+        {
+          "q": "GK",
+          "titulo": "Grupo K",
+          "respuesta": "1º Portugal · 2º Colombia",
+          "estado": "acertado",
+          "puntos": 4,
+          "max": 7,
+          "nota": "real: 1º Colombia · 2º Portugal"
+        },
+        {
+          "q": "GL",
+          "titulo": "Grupo L",
+          "respuesta": "1º Inglaterra · 2º Croacia",
+          "estado": "acertado",
+          "puntos": 7,
+          "max": 7,
+          "nota": "real: 1º Inglaterra · 2º Croacia"
+        },
+        {
+          "q": 13,
+          "titulo": "Resultado exacto de la final",
+          "respuesta": "Portugal 1 - 0 Alemania",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 12,
+          "nota": ""
+        },
+        {
+          "q": 14,
+          "titulo": "Ganador de la final",
+          "respuesta": "Portugal",
+          "estado": "fallado",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 15,
+          "titulo": "¿Penaltis en la final?",
+          "respuesta": "No",
+          "estado": "acertado",
+          "puntos": 5,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 16,
+          "titulo": "¿Roja en la final?",
+          "respuesta": "No",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 5,
+          "nota": ""
+        },
+        {
+          "q": 17,
+          "titulo": "Minuto del primer gol de la final",
+          "respuesta": "62",
+          "estado": "pendiente",
+          "puntos": 0,
+          "max": 10,
+          "nota": ""
+        }
+      ],
+      "tiebreak": [
+        1,
+        1,
+        -1,
+        -3,
+        3,
+        999
+      ],
+      "minute_dist": null,
+      "predijo_nogol": false,
+      "minuto_pred": 62,
+      "rank": 12,
+      "premio_eur": 0.0
+    }
+  ],
+  "live": null,
+  "predicciones_ocultas": false,
+  "deadline_utc": "2026-06-12T16:00:00Z",
+  "form_url": null
+}
